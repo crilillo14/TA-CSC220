@@ -4,13 +4,14 @@ import shutil
 import time
 from TextToPdf import write_simple_pdf
 
+
 students = [line.strip().split(',') for line in open(
 	'/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab06"
-assignmentfiles = ["AnagramUtil.java"]
-disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/"
+assignmentfiles = ["AnagramUtil.java" , ]
+disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab06/"
 compile_files = ["AnagramUtil.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
@@ -50,8 +51,7 @@ def check_shared_folder(distadd, assignment, assignmentfiles):
 		if "csc220-" + student[0] not in folders:
 			# this student does not have a Box folder
 			missing_student.append(student)
-		(has_files, num_files) = check_correct_assignment_submission(distadd + "csc220-" + student[0],
-																	 assignment, assignmentfiles)
+		(has_files, num_files) = check_correct_assignment_submission(distadd + "csc220-" + student[0], assignment, assignmentfiles)
 		if has_files is False:
 			# this student does not have all required files for the assignment
 			incorrect_student.append(student)
@@ -438,16 +438,16 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-# copy_assignment_with_name(distadd, disk_main_add+assignment);
+copy_assignment_with_name(distadd, disk_main_add+assignment);
 
 # third
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 #submit_grade_in_box(disk_main_add+assignment,distadd);
