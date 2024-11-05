@@ -1,0 +1,42 @@
+Username, First Name, Last Name
+
+Folder Missing
+
+C23879475, Akinrimisi, Ayomide
+C23731142, Artison, Benny
+C23959699, Blair, Josh
+C23962401, Danh, Ta
+C23866370, Emmou, Séréna
+C23779378, Feal, Danny
+C23871681, Jariwala, Deelan
+C23958903, Kao, Yu Ning
+C23782126, Levine, Aidan
+C23740422, Lin, Zixian
+C23953598, Neylon, Ryan
+C23814798, Sarghos, Austin
+C23985390, Sinaiko, Nathan
+C23951954, Sydnor, Thomas
+C23854273, Villard, Kenneth
+
+Incorrect Submission / No Submission
+
+C23879475, Akinrimisi, Ayomide
+C23731142, Artison, Benny
+C23777204, Bennett, Sean
+C23959699, Blair, Josh
+C23962401, Danh, Ta
+C23866370, Emmou, Séréna
+C23779378, Feal, Danny
+C23871681, Jariwala, Deelan
+C23958903, Kao, Yu Ning
+C23782126, Levine, Aidan
+C23740422, Lin, Zixian
+C12140856, Moscato Galeno, Roman
+C23953598, Neylon, Ryan
+C23814798, Sarghos, Austin
+C23985390, Sinaiko, Nathan
+C23951954, Sydnor, Thomas
+C23854273, Villard, Kenneth
+
+
+75 correct submissions, 17 have not submitted or incorrect, 92 total students
