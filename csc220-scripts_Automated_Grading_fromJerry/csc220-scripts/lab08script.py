@@ -255,8 +255,14 @@ def check_assignment_for_student(dist_disk):
     rubric_all_file = dist_disk + "/" + assignment.lower() + "_rubric.csv"
     # creates the header for rubric file
     assignment_checking_rubric_all(rubric_all_file)
+    
     for student in students:
         print("Checking now for " + student[1] + " " + student[2])
+        
+        full_name = student[1] + " " + student[2]
+        
+        if(full_name in ["Dalton Cade" , "Hromada Andrew", "Grant Allison", "Swarthout Paige"]):
+            continue
         is_late = False
         submission_point = []
         # initialize the student's grades to 0 using the global grade rubric
@@ -412,13 +418,40 @@ def check_wrong_package_name(dist_disk):
 
 
 def submit_grade_in_box(dist_disk, box_add):
+    
+    missing_students = ["C23879475",
+"C23731142",
+"C23959699",
+"C23962401",
+"C23866370",
+"C23779378",
+"C23871681",
+"C23953598", 
+"C23985390",
+"C23854273",
+"C23879475",
+"C23731142", 
+"C23959699",
+"C23962401", 
+"C23866370", 
+"C23779378",
+"C23985970", 
+"C23871681", 
+"C12140856",
+"C23953598",
+"C23985390",
+"C23854273"]
+    missing = set(missing_students)
+    
     # students.sort()
     for student in students:
+        if student[0] in missing:
+            continue
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-        python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
             + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
             + disk_stu_lab_comment + "/" + review_file + ".txt"
         run = os.popen(python_run)
@@ -444,19 +477,19 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-#copy_assignment_with_name(distadd, disk_main_add + assignment)
+# copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-#check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

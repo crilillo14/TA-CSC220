@@ -1,0 +1,20 @@
+C23809451            Adenrele Fey
+
+
+Comments:
+
+Does not compile.
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                        0/10
+Runs                            0/ 6
+lastIndexOf()                   0/16
+removeAll()                     0/16
+stutter()                       0/16
+shift()                         0/16
+
+SCORE    20 / 100
+

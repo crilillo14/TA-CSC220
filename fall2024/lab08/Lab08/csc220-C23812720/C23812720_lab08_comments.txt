@@ -1,0 +1,22 @@
+C23812720            Kane Fatima
+
+
+Comments:
+
+TEST FAILED -- shift() with 3 elements in the list
+TEST FAILED -- shift() with 2 elements in the list
+TEST FAILED -- shift() with 7 elements in the list
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                  16/16
+removeAll()                    16/16
+stutter()                      16/16
+shift()                         4/16
+
+SCORE    88 / 100
+

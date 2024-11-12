@@ -1,0 +1,31 @@
+C23777204            Bennett Sean
+
+
+Comments:
+
+TEST FAILED -- lastIndexOf() when 18 is before the last value
+TEST FAILED -- lastIndexOf() when 18 is last value
+TEST FAILED -- lastIndexOf() when 7 is the only value present in list
+TEST FAILED -- removeAll() when tried to remove only one 3.
+TEST FAILED -- removeAll() when tried remove 2 consecutive 3's.
+TEST FAILED -- removeAll() when 3 is present in the first location and middle.
+TEST FAILED -- removeAll() when 3 is in first, last, and in middle locations.
+TEST FAILED -- stutter() when only 1 value present before the call.
+TEST FAILED -- stutter() when 2 values present before the call
+TEST FAILED -- stutter() when 5 values present before the call
+TEST FAILED -- shift() with 3 elements in the list
+TEST FAILED -- shift() with 7 elements in the list
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                   6/16
+removeAll()                     0/16
+stutter()                       4/16
+shift()                         8/16
+
+SCORE    54 / 100
+

@@ -1,0 +1,20 @@
+C23878817            Deriso Lena
+
+
+Comments:
+
+
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                  16/16
+removeAll()                    16/16
+stutter()                      16/16
+shift()                        16/16
+
+SCORE    100 / 100
+
