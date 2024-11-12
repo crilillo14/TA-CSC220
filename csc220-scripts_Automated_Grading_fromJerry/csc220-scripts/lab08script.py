@@ -9,13 +9,13 @@ import time
 from TextToPdf import write_simple_pdf
 
 students = [line.strip().split(',') for line in open(
-    '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
+    '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
-distadd = "/Users/Jerry/Box Sync/"
+distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab08"
 assignmentfiles = ["ListNode.java",
                    "LinkedIntList.java", "LinkedIntListTester.java"]
-disk_main_add = "/Users/Jerry/Documents/TA/fall2017/"
+disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab08/"
 compile_files = ["ListNode.java",
                  "LinkedIntList.java", "LinkedIntListTester.java"]
 main_file = "CheckLab.java"
@@ -308,7 +308,7 @@ def check_assignment_for_student(dist_disk):
             package_folder = stu_lab_file_loc + "/" + \
                 assignment + "/src/" + assignment.lower()
             # copy my CheckLab.java into each of the student's lab folder
-            src_main = "/Users/Jerry/Documents/workspace/TA/src/" + assignment.lower() + \
+            src_main = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/src/" + assignment.lower() + \
                 "/" + main_file
             shutil.copyfile(src_main, package_folder + "/" + main_file)
 
@@ -444,7 +444,7 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-# check_shared_folder(distadd,assignment,assignmentfiles)
+check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
 #copy_assignment_with_name(distadd, disk_main_add + assignment)
@@ -459,4 +459,4 @@ def does_pdf_exist(dist_disk, box_add):
 #submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-does_pdf_exist(disk_main_add+assignment,distadd)
+# does_pdf_exist(disk_main_add+assignment,distadd)
