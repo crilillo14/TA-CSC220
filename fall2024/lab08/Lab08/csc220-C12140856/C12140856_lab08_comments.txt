@@ -1,0 +1,20 @@
+C12140856            Moscato Galeno Roman
+
+
+Comments:
+
+No assignment submitted.
+
+Grading Rubric: 
+
+Submitted                       0/15
+Correct Submission              0/ 5
+Compiles                        0/10
+Runs                            0/ 6
+lastIndexOf()                   0/16
+removeAll()                     0/16
+stutter()                       0/16
+shift()                         0/16
+
+SCORE    0 / 100
+

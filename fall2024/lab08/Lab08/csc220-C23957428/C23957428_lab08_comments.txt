@@ -1,0 +1,20 @@
+C23957428            Blas Miguel
+
+
+Comments:
+
+TEST FAILED -- stutter() when only 1 value present before the call.
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                  16/16
+removeAll()                    16/16
+stutter()                      12/16
+shift()                        16/16
+
+SCORE    96 / 100
+

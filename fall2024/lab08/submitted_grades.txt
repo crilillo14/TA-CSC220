@@ -1,0 +1,92 @@
+C23809451-- pdf exists
+C23960230-- pdf exists
+C23879475-- pdf does NOT exist
+C23851216-- pdf exists
+C23981800-- pdf exists
+C23731142-- pdf does NOT exist
+C23988194-- pdf exists
+C23941045-- pdf exists
+C23874223-- pdf exists
+C24001516-- pdf exists
+C24024820-- pdf exists
+C23777204-- pdf exists
+C23938941-- pdf exists
+C23959699-- pdf does NOT exist
+C23957428-- pdf exists
+C23957852-- pdf exists
+C24049223-- pdf exists
+C23961332-- pdf exists
+C00243579-- pdf exists
+C23738810-- pdf exists
+C23956829-- pdf exists
+C23879312-- pdf exists
+C23867477-- pdf exists
+C23743789-- pdf exists
+C23962401-- pdf does NOT exist
+C24029453-- pdf exists
+C23878817-- pdf exists
+C23700556-- pdf exists
+C23863258-- pdf exists
+C23822557-- pdf exists
+C23866370-- pdf does NOT exist
+C23940482-- pdf exists
+C23779378-- pdf does NOT exist
+C23763588-- pdf exists
+C23941824-- pdf exists
+C23946786-- pdf exists
+C23950517-- pdf exists
+C23988962-- pdf exists
+C23959065-- pdf exists
+C23941666-- pdf exists
+C23997505-- pdf exists
+C23891798-- pdf exists
+C23998568-- pdf exists
+C23985970-- pdf does NOT exist
+C23871681-- pdf does NOT exist
+C23856776-- pdf exists
+C23969781-- pdf exists
+C23812720-- pdf exists
+C23958903-- pdf exists
+C23975918-- pdf exists
+C23965827-- pdf exists
+C23951227-- pdf exists
+C23988912-- pdf exists
+C23782126-- pdf exists
+C23986160-- pdf exists
+C23740422-- pdf exists
+C23959312-- pdf exists
+C23860870-- pdf exists
+C24033344-- pdf exists
+C23966148-- pdf exists
+C23988304-- pdf exists
+C12140856-- pdf does NOT exist
+C23992005-- pdf exists
+C23771484-- pdf exists
+C23953598-- pdf does NOT exist
+C23869467-- pdf exists
+C24001827-- pdf exists
+C23897832-- pdf exists
+C23816383-- pdf exists
+C23956123-- pdf exists
+C23948332-- pdf exists
+C23968872-- pdf exists
+C23919925-- pdf exists
+C23969743-- pdf exists
+C23814798-- pdf exists
+C23762880-- pdf exists
+C23889117-- pdf exists
+C23985390-- pdf does NOT exist
+C24031319-- pdf exists
+C23948110-- pdf exists
+C23958869-- pdf exists
+C23951954-- pdf exists
+C23952281-- pdf exists
+C23864585-- pdf exists
+C23950838-- pdf exists
+C24030272-- pdf exists
+C24029262-- pdf exists
+C23854273-- pdf does NOT exist
+C23776431-- pdf exists
+C23876595-- pdf exists
+C23944216-- pdf exists
+C23943963-- pdf exists
