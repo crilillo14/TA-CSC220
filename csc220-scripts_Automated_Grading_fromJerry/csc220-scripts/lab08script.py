@@ -489,7 +489,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-# does_pdf_exist(disk_main_add+assignment,distadd)
+does_pdf_exist(disk_main_add+assignment,distadd)
