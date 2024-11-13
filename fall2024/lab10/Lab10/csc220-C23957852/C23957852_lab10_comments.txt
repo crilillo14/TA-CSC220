@@ -1,0 +1,22 @@
+C23957852            Brenegan Cassidy
+
+
+Comments:
+
+TEST FAILED: sort 2
+TEST FAILED: constructor 3
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+constructor(int)                9/ 9
+insert()                       14/14
+removemax()                    14/14
+constructor(int[])             11/14
+sort()                          9/14
+
+SCORE    92 / 100
+

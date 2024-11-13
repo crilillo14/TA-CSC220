@@ -419,6 +419,9 @@ def check_wrong_package_name(dist_disk):
 
 def submit_grade_in_box(dist_disk, box_add):
     
+    
+    ## *TODO grade these manually, compile them by yourself
+    
     missing_students = ["C23879475",
 "C23731142",
 "C23959699",

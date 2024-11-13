@@ -1,0 +1,23 @@
+C23981800            Ardila Jose
+
+
+Comments:
+
+TEST FAILED: remove 1
+TEST FAILED: remove 2
+## program threw java.lang.NullPointerException: Cannot read the ar
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+constructor(int)                9/ 9
+insert()                       14/14
+removemax()                     5/14
+constructor(int[])              0/14
+sort()                          0/14
+
+SCORE    63 / 100
+

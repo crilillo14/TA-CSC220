@@ -1,6 +1,6 @@
 #
-# lab10 script
-# Graphs 
+# lab12 script
+# Heaps
 #
 import os
 import subprocess
@@ -9,16 +9,16 @@ import time
 from TextToPdf import write_simple_pdf
 
 students = [line.strip().split(',') for line in open(
-    '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
+    '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
-distadd = "/Users/Jerry/Box Sync/"
+distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab10"
-assignmentfiles = ["Node.java", "PathFinder.java"]
-disk_main_add = "/Users/Jerry/Documents/TA/fall2017/"
-compile_files = ["Node.java", "PathFinder.java"]
+assignmentfiles = ["MaxHeap.java", "HeapTester.java"]
+disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab10/"
+compile_files = ["MaxHeap.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
-actual_point = [15, 5, 10, 5, 65]
+actual_point = [15, 5, 10, 5, 9, 14, 14, 14, 14]
 
 
 def check_correct_assignment_submission(distadd, assignment, filelist):
@@ -203,7 +203,8 @@ def assignment_checking_rubric_all(filename, student=None, points=None, is_late=
     if points is None:
         file = open(filename, "w")
         file.write("Last Name, First Name, Lab ID, Submitted, Correct Submission, " +
-                   "Compiles, Runs, solveMaze(), Signature Penalty, Total")
+                   "Compiles, Runs, Constructor(int), insert(), removemax(), Constructor(int[]), " +
+                   "sort(), Signature Penalty, Total")
     else:
         file = open(filename, "a+")
         file.write(student[2] + "," + student[1] + "," + student[0] + ",")
@@ -228,21 +229,24 @@ def check_if_actually_not_submitted(dist_disk_loc):
     return True            # not found any so true
 
 
-def copy_maze_files(dist_disk_loc):
-    # specify location of maze files 
-    root_loc = "/Users/Jerry/Documents/TA/fall2017/files/"
 
-    mazes = ["tinyMaze", "straight", "demoMaze", "turn",
-             "classic", "mediumMaze", "bigMaze", "unsolvable"]
+## requires a replace private with protected method
 
-    for maze in mazes:
-        shutil.copyfile(root_loc + maze + ".txt", dist_disk_loc + maze + ".txt")
 
-    solutions = ["tinyMazeSol", "straightSol", "demoMazeSol", "turnSol",
-                 "classicSol", "mediumMazeSol", "bigMazeSol", "unsolvableSol"]
-                 
-    for sol in solutions:
-        shutil.copyfile(root_loc + sol + ".txt", dist_disk_loc + sol + ".txt")
+def replace_private_with_protected(disk_loc):
+	for student in students:
+		file_loc = disk_loc+"/"+"csc220-"+student[0]+"/"+assignment+"/src/"+assignment.lower()+"/MaxHeap.java"
+		try:
+			file = open(file_loc,"r");
+			contents  = file.read();
+			file.close();
+			contents = contents.replace("private","protected");
+			file2 = open(file_loc, "w");
+			file2.write(contents);
+			file2.close();
+			print ("Done: "+student[0]+" "+student[1]+" "+student[2])
+		except:
+			print ("---- Error: "+student[0]+student[1]+student[2])
 
 
 def check_assignment_for_student(dist_disk):
@@ -251,7 +255,11 @@ def check_assignment_for_student(dist_disk):
     correct submission(5 points)
     compile(10 points)
     run(5 points)
-    solveMaze(65 points)
+    constructor(int) (9 points)
+    insert(14 points)
+    removemax(14 points)
+    constructor(int[]) (14 points)
+    sort(14 points)
     """
     copy_a_backup_copy(dist_disk)
 
@@ -260,7 +268,8 @@ def check_assignment_for_student(dist_disk):
     submission_wrong = []
 
     submission_status = ["Submitted", "Correct Submission", "Compiles",
-                         "Runs", "solveMaze()"]
+                         "Runs", "constructor(int)", "insert()", "removemax()", "constructor(int[])",
+                         "sort()"]
 
     review_file = assignment.lower() + "_comments.txt"
     rubric_all_file = dist_disk + "/" + assignment.lower() + "_rubric.csv"
@@ -319,12 +328,10 @@ def check_assignment_for_student(dist_disk):
             package_folder = stu_lab_file_loc + "/" + \
                 assignment + "/src/" + assignment.lower()
             # copy my CheckLab.java into each of the student's lab folder
-            src_main = "/Users/Jerry/Documents/workspace/TA/src/" + assignment.lower() + \
+            src_main = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/src/" + assignment.lower() + \
                 "/" + main_file
             shutil.copyfile(src_main, package_folder + "/" + main_file)
 
-            # copy all maze files to local student directory 
-            copy_maze_files(source_folder)
             # now compile
             javac_command = package_folder + "/" + main_file
             for cname in compile_files:
@@ -339,9 +346,10 @@ def check_assignment_for_student(dist_disk):
             is_run_successfully = 1
             # now run
             if is_compiled is None:
-                submission_point[2] = actual_point[2]  # program compiled successfully
+                submission_point[2] = actual_point[
+                    2]   # program compiled successfully
                 java_run = "java -cp " + source_folder + " " + assignment.lower() + "." + \
-                    main_class + " " + source_folder
+                    main_class
                 # print java_run
                 run = os.popen(java_run)
                 output = run.read()
@@ -356,14 +364,16 @@ def check_assignment_for_student(dist_disk):
 
             if is_run_successfully is None:
                 # add points for successful run
-                submission_point[3] = actual_point[3]  # program run successfully
+                submission_point[3] = actual_point[
+                    3]  # program run successfully
             elif is_compiled is None:
                 # runtime error
                 assignment_checking_comments(
                     stu_lab_comment, "Program has runtime error.\n")
 
             if is_compiled is None and is_run_successfully is None:
-                message = output[output.index("$$") + 2:output.rindex("$$")].split("$$")
+                message = output[output.index(
+                    "$$") + 2:output.rindex("$$")].split("$$")
                 comments = output[output.rindex("$$") + 2:]
                 # get the grades
                 for i in range(0, len(message)):
@@ -375,7 +385,8 @@ def check_assignment_for_student(dist_disk):
             assignment_checking_comments(
                 stu_lab_comment, "Your submission is incorrect. You may not have submitted all required files.\n")
             assignment_checking_comments(
-                stu_lab_comment, "Does your folder have? " + assignmentfiles[0] + "\n")
+                stu_lab_comment, "Does your folder have? " +
+                assignmentfiles[0] + " " + assignmentfiles[1] + "\n")
         assignment_checking_rubric(
             stu_lab_comment, submission_point, submission_status, is_late)
         assignment_checking_rubric_all(
@@ -422,13 +433,55 @@ def check_wrong_package_name(dist_disk):
 
 
 def submit_grade_in_box(dist_disk, box_add):
+    
+    
+    # hard coded,
+    # *TODO grade these students manually, most likely give them 0s
+    missing_or_wrong_submission = [
+"C23879475", 
+"C23731142", 
+"C23959699", 
+"C23962401", 
+"C23866370", 
+"C23779378", 
+"C23871681", 
+"C23953598", 
+"C23985390", 
+"C23854273", 
+"C23879475", 
+"C23731142", 
+"C23777204", 
+"C23959699", 
+"C23962401", 
+"C23866370", 
+"C23779378", 
+"C23871681", 
+"C23812720", 
+"C12140856", 
+"C23953598", 
+"C23816383", 
+"C23985390", 
+"C23958869", 
+"C23854273"]
+    
+    skip_students = set(missing_or_wrong_submission)
+    
+    
+    
+    
     # students.sort()
     for student in students:
+        if student[0] in skip_students:
+            continue
+        
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-        python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
+        
+        # this is just running python3 <path to your txt2pdf.py>/txt2pdf.py -qo comment.pdf comment.txt
+        # make sure the path to txt2pdf.py is correct
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
             + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
             + disk_stu_lab_comment + "/" + review_file + ".txt"
         run = os.popen(python_run)
@@ -436,8 +489,8 @@ def submit_grade_in_box(dist_disk, box_add):
         # write_simple_pdf(disk_stu_lab_comment,review_file)
         # uploads the pdf file to the student's box account
         time.sleep(1)
-        shutil.copyfile(disk_stu_lab_comment + "/" + review_file +
-                        ".pdf", box_stu_lab_comment + "/" + review_file + ".pdf")
+        shutil.copyfile( disk_stu_lab_comment + "/" + review_file + ".pdf", 
+                        box_stu_lab_comment + "/" + review_file + ".pdf" )
         print("uploaded for " + student[1] + " " + student[2])
 
 
@@ -454,19 +507,23 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd, assignment, assignmentfiles)
 
 # second
-#copy_assignment_with_name(distadd, disk_main_add + assignment)
+# copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
+
+# starting fall 2024, need to replace private with protected to access heap 
+# replace_private_with_protected(disk_main_add+assignment)
+
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

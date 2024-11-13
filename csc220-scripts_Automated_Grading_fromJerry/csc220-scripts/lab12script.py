@@ -1,6 +1,10 @@
 #
-# lab12 script
-# Heaps
+# lab10 script
+# Graphs 
+
+## CHANGE SINCE FALL 2024
+# lab 10 switches with lab12
+# lab 12 is now maze solving
 #
 import os
 import subprocess
@@ -12,13 +16,13 @@ students = [line.strip().split(',') for line in open(
     '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
 
 distadd = "/Users/Jerry/Box Sync/"
-assignment = "Lab12"
+assignment = "Lab10"
 assignmentfiles = ["MaxHeap.java"]
 disk_main_add = "/Users/Jerry/Documents/TA/fall2017/"
 compile_files = ["MaxHeap.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
-actual_point = [15, 5, 10, 5, 9, 14, 14, 14, 14]
+actual_point = [15, 5, 10, 5, 65]
 
 
 def check_correct_assignment_submission(distadd, assignment, filelist):
@@ -203,8 +207,7 @@ def assignment_checking_rubric_all(filename, student=None, points=None, is_late=
     if points is None:
         file = open(filename, "w")
         file.write("Last Name, First Name, Lab ID, Submitted, Correct Submission, " +
-                   "Compiles, Runs, Constructor(int), insert(), removemax(), Constructor(int[]), " +
-                   "sort(), Signature Penalty, Total")
+                   "Compiles, Runs, solveMaze(), Signature Penalty, Total")
     else:
         file = open(filename, "a+")
         file.write(student[2] + "," + student[1] + "," + student[0] + ",")
@@ -229,17 +232,30 @@ def check_if_actually_not_submitted(dist_disk_loc):
     return True            # not found any so true
 
 
+def copy_maze_files(dist_disk_loc):
+    # specify location of maze files 
+    root_loc = "/Users/Jerry/Documents/TA/fall2017/files/"
+
+    mazes = ["tinyMaze", "straight", "demoMaze", "turn",
+             "classic", "mediumMaze", "bigMaze", "unsolvable"]
+
+    for maze in mazes:
+        shutil.copyfile(root_loc + maze + ".txt", dist_disk_loc + maze + ".txt")
+
+    solutions = ["tinyMazeSol", "straightSol", "demoMazeSol", "turnSol",
+                 "classicSol", "mediumMazeSol", "bigMazeSol", "unsolvableSol"]
+                 
+    for sol in solutions:
+        shutil.copyfile(root_loc + sol + ".txt", dist_disk_loc + sol + ".txt")
+
+
 def check_assignment_for_student(dist_disk):
     """
     submitted(15 points)
     correct submission(5 points)
     compile(10 points)
     run(5 points)
-    constructor(int) (9 points)
-    insert(14 points)
-    removemax(14 points)
-    constructor(int[]) (14 points)
-    sort(14 points)
+    solveMaze(65 points)
     """
     copy_a_backup_copy(dist_disk)
 
@@ -248,8 +264,7 @@ def check_assignment_for_student(dist_disk):
     submission_wrong = []
 
     submission_status = ["Submitted", "Correct Submission", "Compiles",
-                         "Runs", "constructor(int)", "insert()", "removemax()", "constructor(int[])",
-                         "sort()"]
+                         "Runs", "solveMaze()"]
 
     review_file = assignment.lower() + "_comments.txt"
     rubric_all_file = dist_disk + "/" + assignment.lower() + "_rubric.csv"
@@ -312,6 +327,8 @@ def check_assignment_for_student(dist_disk):
                 "/" + main_file
             shutil.copyfile(src_main, package_folder + "/" + main_file)
 
+            # copy all maze files to local student directory 
+            copy_maze_files(source_folder)
             # now compile
             javac_command = package_folder + "/" + main_file
             for cname in compile_files:
@@ -326,10 +343,9 @@ def check_assignment_for_student(dist_disk):
             is_run_successfully = 1
             # now run
             if is_compiled is None:
-                submission_point[2] = actual_point[
-                    2]   # program compiled successfully
+                submission_point[2] = actual_point[2]  # program compiled successfully
                 java_run = "java -cp " + source_folder + " " + assignment.lower() + "." + \
-                    main_class
+                    main_class + " " + source_folder
                 # print java_run
                 run = os.popen(java_run)
                 output = run.read()
@@ -344,16 +360,14 @@ def check_assignment_for_student(dist_disk):
 
             if is_run_successfully is None:
                 # add points for successful run
-                submission_point[3] = actual_point[
-                    3]  # program run successfully
+                submission_point[3] = actual_point[3]  # program run successfully
             elif is_compiled is None:
                 # runtime error
                 assignment_checking_comments(
                     stu_lab_comment, "Program has runtime error.\n")
 
             if is_compiled is None and is_run_successfully is None:
-                message = output[output.index(
-                    "$$") + 2:output.rindex("$$")].split("$$")
+                message = output[output.index("$$") + 2:output.rindex("$$")].split("$$")
                 comments = output[output.rindex("$$") + 2:]
                 # get the grades
                 for i in range(0, len(message)):
@@ -365,8 +379,7 @@ def check_assignment_for_student(dist_disk):
             assignment_checking_comments(
                 stu_lab_comment, "Your submission is incorrect. You may not have submitted all required files.\n")
             assignment_checking_comments(
-                stu_lab_comment, "Does your folder have? " +
-                assignmentfiles[0] + " " + assignmentfiles[1] + "\n")
+                stu_lab_comment, "Does your folder have? " + assignmentfiles[0] + "\n")
         assignment_checking_rubric(
             stu_lab_comment, submission_point, submission_status, is_late)
         assignment_checking_rubric_all(
@@ -445,7 +458,7 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd, assignment, assignmentfiles)
+#check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
 #copy_assignment_with_name(distadd, disk_main_add + assignment)
@@ -454,10 +467,10 @@ def does_pdf_exist(dist_disk, box_add):
 #check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-#check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 #submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-does_pdf_exist(disk_main_add+assignment,distadd)
+# does_pdf_exist(disk_main_add+assignment,distadd)

@@ -1,0 +1,21 @@
+C23988912            Latif Shadi
+
+
+Comments:
+
+
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+constructor(int)                9/ 9
+insert()                       14/14
+removemax()                    14/14
+constructor(int[])             14/14
+sort()                         14/14
+
+SCORE    100 / 100
+
