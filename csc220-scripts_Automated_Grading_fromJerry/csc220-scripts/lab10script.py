@@ -13,7 +13,7 @@ students = [line.strip().split(',') for line in open(
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab10"
-assignmentfiles = ["MaxHeap.java"]
+assignmentfiles = ["MaxHeap.java", "HeapTester.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab10/"
 compile_files = ["MaxHeap.java"]
 main_file = "CheckLab.java"
@@ -227,6 +227,26 @@ def check_if_actually_not_submitted(dist_disk_loc):
         if org_loc is not None:
             return False   # found so false
     return True            # not found any so true
+
+
+
+## requires a replace private with protected method
+
+
+def replace_private_with_protected(disk_loc):
+	for student in students:
+		file_loc = disk_loc+"/"+"csc220-"+student[0]+"/"+assignment+"/src/"+assignment.lower()+"/MaxHeap.java"
+		try:
+			file = open(file_loc,"r");
+			contents  = file.read();
+			file.close();
+			contents = contents.replace("private","protected");
+			file2 = open(file_loc, "w");
+			file2.write(contents);
+			file2.close();
+			print ("Done: "+student[0]+" "+student[1]+" "+student[2])
+		except:
+			print ("---- Error: "+student[0]+student[1]+student[2])
 
 
 def check_assignment_for_student(dist_disk):
@@ -445,13 +465,17 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd, assignment, assignmentfiles)
+# check_shared_folder(distadd, assignment, assignmentfiles)
 
 # second
-#copy_assignment_with_name(distadd, disk_main_add + assignment)
+copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
 #check_wrong_package_name(disk_main_add+assignment)
+
+# starting fall 2024, need to replace private with protected to access heap 
+# replace_private_with_protected(disk_main_add+assignment)
+
 
 # fourth
 #check_assignment_for_student(disk_main_add + assignment)
@@ -460,4 +484,4 @@ def does_pdf_exist(dist_disk, box_add):
 #submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-does_pdf_exist(disk_main_add+assignment,distadd)
+# does_pdf_exist(disk_main_add+assignment,distadd)

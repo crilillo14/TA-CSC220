@@ -1,4 +1,4 @@
-package lab12;
+package lab10;
 
 public class MaxHeap {
     public int[] heap;

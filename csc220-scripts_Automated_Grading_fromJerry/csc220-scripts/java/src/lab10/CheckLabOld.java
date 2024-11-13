@@ -1,6 +1,6 @@
 package lab12;
 
-public class CheckLabold {
+public class CheckLabOld {
 	public static void main(String[] args){
 		
 		double []gradePoint = {0,0,0,0,0};

@@ -1,4 +1,4 @@
-package lab10;
+package lab12;
 
 public class Node {
 	

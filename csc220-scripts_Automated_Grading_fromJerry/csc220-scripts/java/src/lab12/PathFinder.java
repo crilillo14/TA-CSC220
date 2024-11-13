@@ -1,4 +1,4 @@
-package lab10;
+package lab12;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
