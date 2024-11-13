@@ -439,7 +439,7 @@ def submit_grade_in_box(dist_disk, box_add):
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-        python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
             + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
             + disk_stu_lab_comment + "/" + review_file + ".txt"
         run = os.popen(python_run)
@@ -474,14 +474,14 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # starting fall 2024, need to replace private with protected to access heap 
-replace_private_with_protected(disk_main_add+assignment)
+# replace_private_with_protected(disk_main_add+assignment)
 
 
 # fourth
-#check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)
