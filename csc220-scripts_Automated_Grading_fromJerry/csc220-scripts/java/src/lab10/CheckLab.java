@@ -8,11 +8,11 @@ public class CheckLab {
 	    String output = "" ;
 		try{
 			
-			double const2=4, insert=11, remove=3, sort=3;
+			double const2=4, offer=11, remove=3, sort=3;
 			MaxHeap maxHeap = new MaxHeap(15);
 			
 			try{
-			if(maxHeap.heap.length == 15){
+			if(maxHeap.theData.length == 15){
 				gradePoint[0] = 100;
 			}else{
 				output+="TEST FAILED: constructor(int) failed to create heap array\n";
@@ -21,93 +21,93 @@ public class CheckLab {
 	        
 	        int[] arr1 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr1))
-	        	output+="TEST FAILED: insert 0\n";
+	        	output+="TEST FAILED: offer 0\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	        
-	        maxHeap.insert(5);
+	        maxHeap.offer(5);
 	        
 	        int[] arr2 = {5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr2))
-	        	output+="TEST FAILED: insert 1\n";
+	        	output+="TEST FAILED: offer 1\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	            
-	        maxHeap.insert(3);
+	        maxHeap.offer(3);
 	        
 	        int[] arr3 = {5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr3))
-	        	output+="TEST FAILED: insert 2\n";
+	        	output+="TEST FAILED: offer 2\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	                
-	        maxHeap.insert(17);
+	        maxHeap.offer(17);
 	        
 	        int[] arr4 = {17, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr4))
-	        	output+="TEST FAILED: insert 3\n";
+	        	output+="TEST FAILED: offer 3\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	                
-	        maxHeap.insert(10);
+	        maxHeap.offer(10);
 	        int[] arr5 = {17, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr5))
-	        	output+="TEST FAILED: insert 4\n";
+	        	output+="TEST FAILED: offer 4\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	        
-	        maxHeap.insert(84);
+	        maxHeap.offer(84);
 	        int[] arr6 = {84, 17, 5, 3, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr6))
-	        	output+="TEST FAILED: insert 5\n";
+	        	output+="TEST FAILED: offer 5\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	      
-	        maxHeap.insert(19);
+	        maxHeap.offer(19);
 	        int[] arr7 = {84, 17, 19, 3, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr7))
-	        	output+="TEST FAILED: insert 6\n";
+	        	output+="TEST FAILED: offer 6\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	                
-	        maxHeap.insert(6);
+	        maxHeap.offer(6);
 	        int[] arr8 = {84, 17, 19, 3, 10, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr8))
-	        	output+="TEST FAILED: insert 7\n";
+	        	output+="TEST FAILED: offer 7\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	                
-	        maxHeap.insert(22);
+	        maxHeap.offer(22);
 	        int[] arr9 = {84, 22, 19, 17, 10, 5, 6, 3, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr9))
-	        	output+="TEST FAILED: insert 8\n";
+	        	output+="TEST FAILED: offer 8\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	                
-	        maxHeap.insert(9);
+	        maxHeap.offer(9);
 	        int[] arr10 = {84, 22, 19, 17, 10, 5, 6, 3, 9, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap.IsEqual(arr10))
-	        	output+="TEST FAILED: insert 9\n";
+	        	output+="TEST FAILED: offer 9\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	        
 	        MaxHeap maxHeap1 = new MaxHeap(15);
 	        
-	        maxHeap1.insert(97);
-	        maxHeap1.insert(93);
-	        maxHeap1.insert(87);
-	        maxHeap1.insert(90);
-	        maxHeap1.insert(89);
-	        maxHeap1.insert(83);    
+	        maxHeap1.offer(97);
+	        maxHeap1.offer(93);
+	        maxHeap1.offer(87);
+	        maxHeap1.offer(90);
+	        maxHeap1.offer(89);
+	        maxHeap1.offer(83);    
 	        
 	        int[] arr11 = {97, 93, 87, 90, 89, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (!maxHeap1.IsEqual(arr11))
-	        	output+="TEST FAILED: insert 10\n";
+	        	output+="TEST FAILED: offer 10\n";
 	        else
-	        	gradePoint[1] += 100/insert;
+	        	gradePoint[1] += 100/offer;
 	        
 	        // remove tests        
-	        int maxVal1 = maxHeap1.removemax();
+	        int maxVal1 = maxHeap1.poll();
 	        
 	        int[] arr12 = {93, 90, 87, 83, 89, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (maxVal1 != 97 || !maxHeap1.IsEqual(arr12))
@@ -115,7 +115,7 @@ public class CheckLab {
 	        else
 	        	gradePoint[2] += 100/remove;
 	                
-	        int maxVal2 = maxHeap1.removemax();
+	        int maxVal2 = maxHeap1.poll();
 	        
 	        int[] arr13 = {90, 89, 87, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	        if (maxVal2 != 93 || !maxHeap1.IsEqual(arr13))
@@ -124,7 +124,7 @@ public class CheckLab {
 	        	gradePoint[2] += 100/remove;
 	        
 	        MaxHeap maxHeap2 = new MaxHeap(15);
-	        if (maxHeap2.removemax() != -1)
+	        if (maxHeap2.poll() != -1)
 	        	output+="TEST FAILED: remove 0\n"; 
 	        else
 	        	gradePoint[2] += 100/remove;
@@ -148,10 +148,13 @@ public class CheckLab {
 	        	//gradePoint[4] += 100/sort;
 	        }
 	        
-        	MaxHeap maxHeap7 = new MaxHeap(0);
-	        maxHeap7.heap = arr15;
+        	// MaxHeap maxHeap7 = new MaxHeap(0);
+	        // maxHeap7.theData = arr15;
+
+			MaxHeap maxHeap7 = new MaxHeap(0); 
+			maxHeap7.theData = arr15.clone();
 	        try { 
-	        	maxHeap7.sort();
+	        	maxHeap7.sort(arr15);
 		        if (!maxHeap7.IsEqual(arr15))
 		        	output+="TEST FAILED: sort 1\n";
 		        else{
@@ -181,10 +184,10 @@ public class CheckLab {
 	        }
 	        
 	        MaxHeap maxHeap8 = new MaxHeap(2);
-	        maxHeap8.heap = arr16_2_1;
-	        maxHeap8.size = arr16_2_1.length - 1;
+	        maxHeap8.theData = arr16_2_1.clone();
+	        maxHeap8.size = arr16_2_1.length;
 	        try { 
-		        maxHeap8.sort();
+		        maxHeap8.sort(arr16_2_1);
 		        if (!maxHeap8.IsEqual(arr16_2))
 		        	output+="TEST FAILED: sort 2\n";
 		        else{
@@ -205,10 +208,10 @@ public class CheckLab {
 	        }
 	        
         	MaxHeap maxHeap9 = new MaxHeap(9);
-	        maxHeap9.heap = arr17_2;
-	        maxHeap9.size = arr17_2.length - 1;
+	        maxHeap9.theData = arr17_2.clone();
+	        maxHeap9.size = arr17_2.length;
 	        try { 
-		        maxHeap9.sort();
+		        maxHeap9.sort(arr17_2);
 		        if (!maxHeap9.IsEqual(arr17_sort))
 		        	output+="TEST FAILED: sort 3\n";
 		        else{
