@@ -468,13 +468,13 @@ def does_pdf_exist(dist_disk, box_add):
 # check_shared_folder(distadd, assignment, assignmentfiles)
 
 # second
-copy_assignment_with_name(distadd, disk_main_add + assignment)
+# copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # starting fall 2024, need to replace private with protected to access heap 
-# replace_private_with_protected(disk_main_add+assignment)
+replace_private_with_protected(disk_main_add+assignment)
 
 
 # fourth

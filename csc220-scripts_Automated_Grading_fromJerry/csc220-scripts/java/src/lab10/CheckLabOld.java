@@ -1,4 +1,4 @@
-package lab12;
+package lab10;
 
 public class CheckLabOld {
 	public static void main(String[] args){
@@ -13,7 +13,7 @@ public class CheckLabOld {
 			Solution sol = new Solution(15);
 			
 			try{
-				if(maxHeap.heap.length == 15){
+				if(maxHeap.theData.length == 15){
 					gradePoint[0] = 100;
 				}else{
 					output+="TEST FAILED: constructor(int) failed to create heap array\n";
