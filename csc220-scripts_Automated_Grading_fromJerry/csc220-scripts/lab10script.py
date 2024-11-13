@@ -13,9 +13,9 @@ students = [line.strip().split(',') for line in open(
 
 distadd = "/Users/Jerry/Box Sync/"
 assignment = "Lab10"
-assignmentfiles = ["Node.java", "PathFinder.java"]
+assignmentfiles = ["MaxHeap.java"]
 disk_main_add = "/Users/Jerry/Documents/TA/fall2017/"
-compile_files = ["Node.java", "PathFinder.java"]
+compile_files = ["MaxHeap.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
 actual_point = [15, 5, 10, 5, 65]
