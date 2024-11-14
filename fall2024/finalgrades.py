@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 # Set assignment number
-assignment = 10
+assignment = '08'
 
 # File paths
 rubricPath = f"/Users/CristobalLillo_1/TA/fall2024/lab{assignment}/Lab{assignment}/lab{assignment}_rubric.csv"
@@ -49,7 +49,7 @@ print(f"Submission rate: {(len(graded_ids)/len(student_ids)*100):.1f}%")
 if missing_ids:
     print("\nStudents who haven't submitted:")
     missing_students = [student for student in class_roster if student[0] in missing_ids]
-    with open(gradingPath +"missing.txt", w) as write_file:
+    with open(gradingPath +"missing.txt", 'w') as write_file:
         for student in missing_students:
             print(f"ID: {student[0]}, Name: {student[1]}")
             write_file.write(f"ID: {student[0]}, Name: {student[1]}")

@@ -1,3 +1,5 @@
+
+// old, do NOT USE
 package lab10;
 
 public class CheckLabOld {
