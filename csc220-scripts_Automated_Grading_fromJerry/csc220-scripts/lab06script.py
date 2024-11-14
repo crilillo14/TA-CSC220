@@ -10,7 +10,7 @@ students = [line.strip().split(',') for line in open(
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab06"
-assignmentfiles = ["AnagramUtil.java" , "SortedString.java"]
+assignmentfiles = ["AnagramUtil.java" , "SortedString.java", "InsertionSort.java" , "MergeSort.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab06/"
 compile_files = ["AnagramUtil.java", "SortedString.java", "InsertionSort.java", "MergeSort.java"]
 main_file = "CheckLab.java"
@@ -253,6 +253,10 @@ def check_assignment_for_student(dist_disk):
 	assignment_checking_rubric_all(rubric_all_file)
 	for student in students:
 		print("Checking now for " + student[1] + " " + student[2])
+		if student[1] + " " + student[2] == "Blas Miguel":
+			continue
+
+  
 		is_late = False
 		submission_point = []
 		# initialize the student's grades to 0 using the global grade rubric
@@ -307,18 +311,14 @@ def check_assignment_for_student(dist_disk):
 			src_main = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/src/" + assignment.lower() + \
 				"/" + main_file
 			shutil.copyfile(src_main, package_folder + "/" + main_file)
+			
 
 			# now compile
 			javac_command = package_folder + "/" + main_file
 			for cname in compile_files:
 				javac_command += " " + package_folder + "/" + cname
-
-			# check to see if OrderStrings is present
-			if os.path.exists(package_folder + "/OrderStrings.java"):
-				javac_command += " " + package_folder + "/OrderStrings.java"
-
-
 			javac_command = "javac " + javac_command
+   
 			# print javac_command
 			compile = os.popen(javac_command)
 			output = compile.read()
@@ -441,13 +441,13 @@ def does_pdf_exist(dist_disk, box_add):
 # check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-copy_assignment_with_name(distadd, disk_main_add+assignment);
+# copy_assignment_with_name(distadd, disk_main_add+assignment);
 
 # third
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-# check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 #submit_grade_in_box(disk_main_add+assignment,distadd);
