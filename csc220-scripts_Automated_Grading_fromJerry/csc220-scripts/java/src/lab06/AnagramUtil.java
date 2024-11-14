@@ -4,137 +4,135 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+/**
+ * Utility class for handling anagram-related operations such as determining
+ * if two strings are anagrams and finding the largest group of anagrams from
+ * a list.
+ */
 public class AnagramUtil {
-	
-    // Reads words from a file (assumed to contain one word per line)
-    // Returns the words as an array of strings.
-    public static String[] readFile(String filename)
-    {
-        ArrayList<String> results = new ArrayList<String>();
-        try
-        {
-            BufferedReader input = new BufferedReader(new FileReader(filename));
-            while(input.ready())
-            {
-                results.add(input.readLine());
-            }
-            input.close();
-        }
-        catch(Exception e)
-        {e.printStackTrace();}
-        String[] retval = new String[1];
-        return results.toArray(retval);
+
+    /**
+     * Determines if two SortedString objects are anagrams of each other.
+     *
+     * @param str1 the first SortedString
+     * @param str2 the second SortedString
+     * @return true if the two strings are anagrams, false otherwise
+     */
+    public static boolean areAnagrams(SortedString str1, SortedString str2){
+    	if (str1.compareTo(str2) == 0) {
+    		return true;
+    	}
+        return false;
     }
-    
+
+    /**
+     * Finds the largest group of anagrams in a file. The file should contain one
+     * word per line.
+     *
+     * @param filename the name of the file containing the list of words
+     * @return an array of strings containing the largest group of anagrams
+     */
     public static String[] getLargestAnagramGroup(String filename){
-        String[] words = readFile(filename);
+        SortedString[] words = readFile(filename);
         String[] toReturn = getLargestAnagramGroup(words);
         return toReturn;
     }
-    
-    public static String[] getLargestAnagramGroup(String[] stringList){
-        // @TAs: This is the easiest way to implement this function.
-        // @TAs: There are more smart ways to accomplish this...
-        
-        insertionSort(stringList);
-        
-        if (stringList.length <= 1)
-            return new String[0];
-        
+
+    /**
+     * Finds the largest group of anagrams in a list of SortedString objects.
+     *
+     * @param stringList an array of SortedString objects
+     * @return an array of strings containing the largest group of anagrams
+     */
+    public static String[] getLargestAnagramGroup(SortedString[] stringList){
+    	/* Initialize a sorting algorithm of type SortedString using either
+         MergeSort or InsertionSort */
+    	
+    	
+    	//InsertionSort<SortedString> I = new InsertionSort<SortedString>();
+    	MergeSort<SortedString> I = new MergeSort<SortedString>();
+    	
+    	
+        /* sort the input string list */
+    	stringList = I.sort(stringList);
+    	
+    	/* The case where stringList is of size 1 or less */
+    	if (stringList.length <= 1 || stringList[0] == null) {
+    		return new String[0];
+    	} 
+    	
+    	/* The variables for the logic following */
         int end = 0, length = 1, i = 0, maxLength = 0;
-        
-        for (i = 0; i < stringList.length-1; i++){
-            if (areAnagrams(stringList[i], stringList[i+1])){
-                length++;
-            }else{
-                if (length > maxLength && length > 1){
-                    maxLength = length;
-                    end = i;
-                }
-                length = 1;
-            }
+
+        /* Loop through stringList.
+
+           If stringList[i] and stringList[i + 1] are anagrams, increment the
+           length of this anagram group.
+
+           Otherwise, check to see if the length of this anagram group is longer
+           than the currently known maximum group length. Update variables
+           accordingly (see end, length, i, and MaxLength).
+
+        */
+        for (; i < stringList.length-1;i++) {
+        	if (stringList[i].compareTo(stringList[i+1]) == 0) {
+        		length++;
+        	} else {
+        		if (length > maxLength) {
+        			maxLength = length;
+        			end = i;
+        		}
+        		length = 1;
+        	}
+        }
+
+
+        /* Don't forget one last check for the end:
+           if the longest list is the last group.
+           As before, update variables accordingly.
+        */
+        if (length > maxLength) {
+			maxLength = length;
+			end = i + 1;
+		}
+
+
+        /* Prepare to return. The following is almost the answer except
+           for one thing...
+        */
+        if (maxLength == 1) {
+        	return new String[0];
         }
         
-        // don't forget one last check
-        // if the longest list is the last one
-        if (length > maxLength && length > 1){
-            maxLength = length;
-            end = i;
-        }		
-        
-        
-        //prepare to return
         String[] toReturn = new String[maxLength];
         for (int j = 0; j < maxLength; j++)
-            toReturn[j] = stringList[j+end-maxLength+1];
-        
+            toReturn[j] = stringList[j+end-maxLength+1].getUnsorted();
+
         return toReturn;
     }
-    
-    public static boolean areAnagrams(String inputString1, String inputString2){
-        return sort(inputString1).equals(sort(inputString2));
+
+    /**
+     * Reads a list of words from a file, where each line of the file contains a single word.
+     * Converts the words to SortedString objects.
+     *
+     * @param filename the name of the file to read from
+     * @return an array of SortedString objects representing the words in the file
+     */
+    public static SortedString[] readFile(String filename) {
+        ArrayList<SortedString> results = new ArrayList<SortedString>();
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(filename));
+            while(input.ready()) {
+                results.add(new SortedString(input.readLine()));
+            }
+            input.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        SortedString[] retval = new SortedString[1];
+        return results.toArray(retval);
     }
-    
-    public static String sort(String inputString){
-        if (inputString == null)
-            return null;
-        
-        // are not allowed to use Arrays.sort
-        char[] arr = inputString.toLowerCase().toCharArray();
-        
-        for(int i=1; i < arr.length; i++)
-        {
-            char index = arr[i];
-            int j = i;
-            while(j>0 && arr[j-1]>index)
-            { 
-                arr[j] = arr[j-1];
-                j--; 
-            } 
-            arr[j] = index; 
-        } 
-        
-        return new String(arr);
-    }	
-    
-    public static void insertionSort(String[] inputList){
-        if (inputList.length <= 1)
-            return;
-        
-        OrderStrings c = new OrderStrings();
-        
-        for(int i=1; i < inputList.length; i++) 
-        { 
-            String index = inputList[i]; 
-            int j = i; 
-            while(j>0 && c.compare(sort(inputList[j-1]), sort(index))>0) 
-            { 
-                inputList[j] = inputList[j-1]; 
-                j--; 
-            } 
-            inputList[j] = index;  
-        } 
-        
-    }
-	
-	public static void main(String[] args){
-		
-		// Reads a text file with a single word per line, returns them as an array of Strings
-		String[] words_copy = readFile("sample_word_list.txt");
-		
-				
-		insertionSort(words_copy);
-		
-		System.out.println("===============");		
-		
-		for (int i = 0; i < words_copy.length; i++)
-			System.out.println(sort(words_copy[i]));
-		
-		String[] s3 = getLargestAnagramGroup("sample_word_list.txt");
-		
-		System.out.println("===============");		
-		
-		for (int i = 0; i < s3.length; i++)
-			System.out.println(s3[i]);		
-	}
 }
+
+
+

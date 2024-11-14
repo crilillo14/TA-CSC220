@@ -10,9 +10,9 @@ students = [line.strip().split(',') for line in open(
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab06"
-assignmentfiles = ["AnagramUtil.java" , ]
+assignmentfiles = ["AnagramUtil.java" , "SortedString.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab06/"
-compile_files = ["AnagramUtil.java"]
+compile_files = ["AnagramUtil.java", "SortedString.java", "InsertionSort.java", "MergeSort.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
 actual_point = [15, 5, 10, 5, 10, 10, 15, 15, 15]
