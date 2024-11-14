@@ -1,0 +1,91 @@
+Adenrele Fey, C23809451, 0.9
+Ajayi Timileyin, C23960230, 4.1850000000000005
+Akinrimisi Ayomide, C23879475, 0.0
+Andrade Fernandes Teixeira Pedro Woquiton, C23851216, 0.9
+Ardila Jose, C23981800, 4.1850000000000005
+Artison Benny, C23731142, 0.0
+Aslam Fakhir Ahmed, C23988194, 3.6
+Atkins Sloan, C23941045, 4.05
+Azim Mahnoor, C23874223, 4.1850000000000005
+Bao Yifan, C24001516, 3.15
+Bartholomew Brent, C24024820, 4.5
+Bennett Sean, C23777204, 0.6749999999999999
+Bernard Matthew, C23938941, 3.465
+Blair Josh, C23959699, 0.0
+Brenegan Cassidy, C23957852, 4.365
+Bryan Luke, C24049223, 4.1850000000000005
+Carrillo Zamora Javier, C23961332, 4.5
+Chan Daniel, C00243579, 3.015
+Chen Zhikun, C23738810, 3.33
+Clarke Tijanni, C23956829, 3.78
+Cocimano Sidney, C23879312, 4.1850000000000005
+Cole Maddie, C23867477, 4.1850000000000005
+Dalton Cade, C23743789, 4.1850000000000005
+Danh Ta, C23962401, 0.0
+Degori Joey, C24029453, 4.1850000000000005
+Deriso Lena, C23878817, 3.78
+Diamond Alessandra, C23700556, 4.1850000000000005
+Dietel Andy, C23863258, 4.1850000000000005
+Eltantawy Tarek, C23822557, 3.6
+Emmou Séréna, C23866370, 0.0
+Estrada Julian, C23940482, 3.285
+Feal Danny, C23779378, 0.0
+Fiore Alan, C23763588, 3.915
+Geoghan Brock, C23941824, 3.915
+Grant Allison, C23946786, 4.5
+Graves Ava, C23950517, 4.1850000000000005
+Gregor Daniel, C23988962, 4.05
+Haroon Danial, C23959065, 4.365
+Hartsell Ella, C23941666, 3.465
+Headrick Caden, C23997505, 3.78
+Hilgemberg Merlin Laura, C23891798, 0.9
+Hromada Andrew, C23998568, 4.5
+Jacoby Iva, C23985970, 4.1850000000000005
+Jariwala Deelan, C23871681, 0.0
+Joinville Billy, C23856776, 4.05
+Juara Carolina, C23969781, 4.1850000000000005
+Kane Fatima, C23812720, 0.9
+Kao Yu Ning, C23958903, 4.1850000000000005
+Karim Ishaq, C23975918, 4.05
+Khedr Mostafa, C23965827, 0.9
+Knox Grady, C23951227, 3.78
+Latif Shadi, C23988912, 4.41
+Levine Aidan, C23782126, 4.140000000000001
+Li Daniel, C23986160, 4.1850000000000005
+Lin Zixian, C23740422, 4.1850000000000005
+Majid Messiah, C23959312, 3.735
+Mastando Michael, C23860870, 4.05
+Mirza Annafi, C24033344, 4.05
+Montenegro Duarte Mariana, C23966148, 4.05
+Morales Esteban, C23988304, 3.915
+Moscato Galeno Roman, C12140856, 0.0
+Mucherla Hrishi, C23992005, 3.06
+Muscarello Mason, C23771484, 4.05
+Neylon Ryan, C23953598, 0.0
+Niu Zhuoyi, C23869467, 4.1850000000000005
+O'Neill Shane, C24001827, 4.1850000000000005
+Perera Anita, C23897832, 0.9
+Perez Shawn, C23816383, 3.6450000000000005
+Perron Sabrina, C23956123, 4.05
+Pounder Amy, C23948332, 4.1850000000000005
+Preston Christopher, C23968872, 3.735
+Ramos Alex, C23919925, 3.285
+Rednam Sid, C23969743, 4.05
+Sarghos Austin, C23814798, 4.5
+Schmitt Eric, C23762880, 4.5
+Shen Yuhen, C23889117, 3.465
+Sinaiko Nathan, C23985390, 0.0
+Stein Orel, C24031319, 4.1850000000000005
+Stevenson Ryan, C23948110, 4.1850000000000005
+Swarthout Paige, C23958869, 4.1850000000000005
+Sydnor Thomas, C23951954, 4.5
+Tao Phuong Hong Ngoc, C23952281, 4.1850000000000005
+Tegan Luke, C23864585, 3.465
+Ujaque-Medina Ramses, C23950838, 4.5
+Van Rhein Rachel, C24030272, 4.32
+Velasquez Lucas, C24029262, 4.1850000000000005
+Villard Kenneth, C23854273, 0.0
+Weinbaum Brendan, C23776431, 4.1850000000000005
+Wiegmann Victoria, C23876595, 4.05
+Wiser Sebastian, C23944216, 2.655
+Yepes Joshua, C23943963, 4.5

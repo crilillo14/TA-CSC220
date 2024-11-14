@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 # Set assignment number
-assignment = '08'
+assignment = '06'
 
 # File paths
 rubricPath = f"/Users/CristobalLillo_1/TA/fall2024/lab{assignment}/Lab{assignment}/lab{assignment}_rubric.csv"

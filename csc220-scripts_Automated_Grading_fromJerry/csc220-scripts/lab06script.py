@@ -416,6 +416,8 @@ def submit_grade_in_box(dist_disk, box_add):
     for student in students:
 
         review_file = student[0] + "_" + assignment.lower() + "_comments"
+        
+        # quick fix for missing students, should maybe create a directory for them, put the lab comments there, give them 0s, and upload pdfs to box
         if student[0] in missing_students:
             print("missing student: " + student[1]+ " " + student[2])
             continue
