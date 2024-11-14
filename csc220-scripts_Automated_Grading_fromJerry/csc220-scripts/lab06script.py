@@ -405,24 +405,34 @@ def check_wrong_package_name(dist_disk):
 		file.write(ms[0] + ", " + ms[1] + ", " + ms[2] + "\n")
 	file.close()
 
-
 def submit_grade_in_box(dist_disk, box_add):
-	# students.sort()
-	for student in students:
-		review_file = student[0] + "_" + assignment.lower() + "_comments"
-		disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
-		box_stu_lab_comment = box_add + "csc220-" + student[0]
-		# shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-		python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
-			+ disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
-			+ disk_stu_lab_comment + "/" + review_file + ".txt"
-		run = os.popen(python_run)
-		# make the pdf
-		# write_simple_pdf(disk_stu_lab_comment,review_file)
-		# uploads the pdf file to the student's box account
-		time.sleep(1)
-		shutil.copyfile(disk_stu_lab_comment+"/"+review_file+".pdf",box_stu_lab_comment+"/"+review_file+".pdf");
-		print("uploaded for " + student[1] + " " + student[2])
+    
+    
+    ## *TODO grade these manually, compile them by yourself
+    
+    missing_students = ['C23879475','C23731142','C23959699','C23962401','C23866370','C23779378','C23871681','C23953598','C23985390','C23854273']
+    
+    # students.sort()
+    for student in students:
+
+        review_file = student[0] + "_" + assignment.lower() + "_comments"
+        if student[0] in missing_students:
+            print("missing student: " + student[1]+ " " + student[2])
+            continue
+        disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
+        box_stu_lab_comment = box_add + "csc220-" + student[0]
+        # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
+            + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
+            + disk_stu_lab_comment + "/" + review_file + ".txt"
+        run = os.popen(python_run)
+        # make the pdf
+        # write_simple_pdf(disk_stu_lab_comment,review_file)
+        # uploads the pdf file to the student's box account
+        time.sleep(1)
+        shutil.copyfile(disk_stu_lab_comment + "/" + review_file +
+                        ".pdf", box_stu_lab_comment + "/" + review_file + ".pdf")
+        print("uploaded for " + student[1] + " " + student[2])
 
 
 def does_pdf_exist(dist_disk, box_add):
@@ -447,10 +457,10 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)
