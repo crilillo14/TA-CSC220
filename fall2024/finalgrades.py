@@ -18,7 +18,7 @@ df['weighted'] = (df['Total'] / 100) * 4.5
 df = df.sort_values('First Name')
 
 # Write grades to file
-with open(gradingPath + f"labGrades.txt", 'w') as write_file:
+with open(gradingPath + f"lab{assignment}Grades.txt", 'w') as write_file:
     for index, row in df.iterrows():
         name = f"{row['First Name']} {row['Last Name']}"
         c_number = row['Lab ID']
