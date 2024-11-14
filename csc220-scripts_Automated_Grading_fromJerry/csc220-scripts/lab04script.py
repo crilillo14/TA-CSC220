@@ -10,9 +10,9 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab04"
-assignmentfiles = ["Book.java","LibraryBookGeneric.java","LibraryGeneric.java","LibraryGenericTest.java", "PhoneNumber.java"]
+assignmentfiles = ["Book.java","LibraryBook.java","Library.java", "PhoneNumber.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab04/"
-compile_files =  ["Book.java","LibraryBookGeneric.java","LibraryGeneric.java", "PhoneNumber.java"]
+compile_files =  ["Book.java","LibraryBook.java","Library.java", "PhoneNumber.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
 actual_point = [15,5,15,10,10,10,10,10,15]
@@ -52,7 +52,9 @@ def check_shared_folder(distadd,assignment,assignmentfiles):
 		elif check_correct_assignment_submission(distadd+"csc220-"+student[0],assignment,assignmentfiles) is False:
 			# this student has a Box folder that is incorrectly formatted 
 			incorrect_student.append(student)
- 
+	if not os.path.exists(disk_main_add):
+		os.makedirs(disk_main_add)
+		print ("lab folder created in fall2024")
 	file = open(disk_main_add+"Missing-Wrongly-Named-students.txt","w")
 	file.write("Username, First Name, Last Name\n");
 	file.write("\nFolder Missing\n\n");
@@ -411,7 +413,7 @@ def check_wrong_package_name(dist_disk):
 
 def replace_private_with_protected(disk_loc):
 	for student in students:
-		file_loc = disk_loc+"/"+"csc220-"+student[0]+"/"+assignment+"/src/"+assignment.lower()+"/LibraryGeneric.java"
+		file_loc = disk_loc+"/"+"csc220-"+student[0]+"/"+assignment+"/src/"+assignment.lower()+"/Library.java"
 		try:
 			file = open(file_loc,"r");
 			contents  = file.read();
@@ -454,27 +456,28 @@ def does_pdf_exist(dist_disk,box_add):
 # comment and uncomment each as you grade; don't uncomment all at once 
 
 # first - just a check; no copying 
-check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second 
-#copy_assignment_with_name(distadd, disk_main_add+assignment);
+# copy_assignment_with_name(distadd, disk_main_add+assignment);
 # secnd for late - must check for lateness
-#copy_assignment_with_name_late(distadd, disk_main_add+assignment);
+# copy_assignment_with_name_late(distadd, disk_main_add+assignment);
 
 # this is for testing and printing 
 #submited_students = [line.strip() for line in open(disk_main_add+assignment+"/wednesday10am.txt")]
-#print   submited_students
+#print(submited_students)
 
-#check_wrong_package_name(disk_main_add+assignment)   for testing bad packages
- 
+
+
 # third
+#  for testing bad packages 
 #check_wrong_package_name(disk_main_add+assignment)
 
 # pre-requisite to fourth 
-#replace_private_with_protected(disk_main_add+assignment)
+# replace_private_with_protected(disk_main_add+assignment)
 
 # fourth
-#check_assignment_for_student(disk_main_add+assignment)
+check_assignment_for_student(disk_main_add+assignment)
 
 # fifth
 #put grade
