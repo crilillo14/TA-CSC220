@@ -1,0 +1,23 @@
+C23969743            Rednam Sid
+
+
+Comments:
+
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+## getLargestAnagramGroup(file) threw java.lang.NullPointerException: Cannot invoke "lab06.SortedString.getUnsorted()" because "<local2>[...]" is null
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)    9/15
+getLargestAnagramGroup([])     11/15
+
+SCORE    90 / 100
+

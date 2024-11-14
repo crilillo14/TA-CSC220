@@ -1,0 +1,22 @@
+C23986160            Li Daniel
+
+
+Comments:
+
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)   12/15
+getLargestAnagramGroup([])     11/15
+
+SCORE    93 / 100
+

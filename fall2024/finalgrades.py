@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 # Set assignment number
-assignment = '08'
+assignment = '06'
 
 # File paths
 rubricPath = f"/Users/CristobalLillo_1/TA/fall2024/lab{assignment}/Lab{assignment}/lab{assignment}_rubric.csv"
@@ -18,7 +18,7 @@ df['weighted'] = (df['Total'] / 100) * 4.5
 df = df.sort_values('First Name')
 
 # Write grades to file
-with open(gradingPath + f"labGrades.txt", 'w') as write_file:
+with open(gradingPath + f"lab{assignment}Grades.txt", 'w') as write_file:
     for index, row in df.iterrows():
         name = f"{row['First Name']} {row['Last Name']}"
         c_number = row['Lab ID']

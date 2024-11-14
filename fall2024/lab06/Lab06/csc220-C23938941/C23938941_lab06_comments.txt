@@ -1,0 +1,26 @@
+C23938941            Bernard Matthew
+
+
+Comments:
+
+TEST FAILED -- insertionSort
+TEST FAILED -- insertionSort -- an already sorted list
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+## getLargestAnagramGroup(file) threw java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
+## getLargestAnagramGroup([]) threw java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 0
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                 5/15
+getLargestAnagramGroup(file)    9/15
+getLargestAnagramGroup([])      8/15
+
+SCORE    77 / 100
+

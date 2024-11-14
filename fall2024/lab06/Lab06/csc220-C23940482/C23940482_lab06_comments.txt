@@ -1,0 +1,28 @@
+C23940482            Estrada Julian
+
+
+Comments:
+
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the end
+TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the end
+## getLargestAnagramGroup([]) threw java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)    3/15
+getLargestAnagramGroup([])      0/15
+
+SCORE    73 / 100
+
