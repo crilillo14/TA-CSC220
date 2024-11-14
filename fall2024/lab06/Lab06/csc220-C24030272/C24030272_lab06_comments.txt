@@ -3,7 +3,7 @@ C24030272            Van Rhein Rachel
 
 Comments:
 
-
+## getLargestAnagramGroup([]) threw java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 
 Grading Rubric: 
 
@@ -12,10 +12,10 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 sort()                         10/10
-areAnagrams()                   3/10
-insertionSort()                 0/15
-getLargestAnagramGroup(file)    3/15
-getLargestAnagramGroup([])      0/15
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)   15/15
+getLargestAnagramGroup([])     11/15
 
-SCORE    51 / 100
+SCORE    96 / 100
 

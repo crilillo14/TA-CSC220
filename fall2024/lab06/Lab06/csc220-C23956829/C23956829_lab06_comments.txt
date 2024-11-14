@@ -3,7 +3,11 @@ C23956829            Clarke Tijanni
 
 Comments:
 
-
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the end
+TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the end
 
 Grading Rubric: 
 
@@ -12,10 +16,10 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 sort()                         10/10
-areAnagrams()                   3/10
-insertionSort()                 0/15
-getLargestAnagramGroup(file)    3/15
-getLargestAnagramGroup([])      0/15
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)    6/15
+getLargestAnagramGroup([])      8/15
 
-SCORE    51 / 100
+SCORE    84 / 100
 

@@ -3,7 +3,14 @@ C23738810            Chen Zhikun
 
 Comments:
 
-TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the end
+TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt
+## getLargestAnagramGroup(file) threw java.lang.NullPointerException: Cannot invoke "lab06.SortedString.toString()" because "<local0>[0]" is null
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the middle
+TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the end
 
 Grading Rubric: 
 
@@ -12,10 +19,10 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 sort()                         10/10
-areAnagrams()                   3/10
-insertionSort()                 0/15
+areAnagrams()                  10/10
+insertionSort()                15/15
 getLargestAnagramGroup(file)    0/15
-getLargestAnagramGroup([])      0/15
+getLargestAnagramGroup([])      4/15
 
-SCORE    48 / 100
+SCORE    74 / 100
 

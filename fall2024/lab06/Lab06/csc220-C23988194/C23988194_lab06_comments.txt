@@ -5,7 +5,9 @@ Comments:
 
 TEST FAILED -- sort -- for already sorted strings
 TEST FAILED -- sort
-TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams
+TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams 
+TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt
+TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams
 
 Grading Rubric: 
 
@@ -14,10 +16,10 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 sort()                          0/10
-areAnagrams()                   3/10
-insertionSort()                 0/15
-getLargestAnagramGroup(file)    0/15
-getLargestAnagramGroup([])      0/15
+areAnagrams()                  10/10
+insertionSort()                15/15
+getLargestAnagramGroup(file)    9/15
+getLargestAnagramGroup([])     11/15
 
-SCORE    38 / 100
+SCORE    80 / 100
 

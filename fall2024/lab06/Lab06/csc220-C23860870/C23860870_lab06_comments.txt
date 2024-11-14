@@ -3,7 +3,8 @@ C23860870            Mastando Michael
 
 Comments:
 
-
+## insertionSort() threw java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 4
+## insertionSort() threw java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 
 Grading Rubric: 
 
@@ -12,10 +13,10 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 sort()                         10/10
-areAnagrams()                   3/10
-insertionSort()                 0/15
-getLargestAnagramGroup(file)    3/15
-getLargestAnagramGroup([])      0/15
+areAnagrams()                  10/10
+insertionSort()                 5/15
+getLargestAnagramGroup(file)   15/15
+getLargestAnagramGroup([])     15/15
 
-SCORE    51 / 100
+SCORE    90 / 100
 
