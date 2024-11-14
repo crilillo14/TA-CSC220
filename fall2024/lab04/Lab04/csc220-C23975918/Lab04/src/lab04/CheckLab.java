@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.GregorianCalendar;
+import java.util.List;
+
 
 /**
  * Testing class for LibraryRef.
@@ -39,8 +41,8 @@ public class CheckLab {
 		    libRef.add(6000, "Test 3", "Test 3 1st book");
 		    libRef.add(111, "Test 3", "AAAAAAAAAA AAAAAAAAAAA");
 		    
-		    ArrayList<LibraryBook<String>> refISBN = libRef.getOrderedByISBNRef();
-		    ArrayList<LibraryBook<String>> testISBN = libRef.getInventoryList();
+		    List<LibraryBook<String>> refISBN = libRef.getOrderedByISBNRef();
+		    List<LibraryBook<String>> testISBN = libRef.getInventoryList();
 		    
 		    if(libRef.checkTwoLibrary(refISBN, testISBN)){
 		    	gradePoint[4] = 100;
@@ -48,9 +50,9 @@ public class CheckLab {
 		    	output += "## OrderByISBN is incorrect and doesn't sort properly\n";
 		    }
 		    
-		    ArrayList<LibraryBook<String>> refAuthorSort = libRef.getOrderedByAuthorRef();
-		    ArrayList<LibraryBook<String>> refAutherOnlySort = libRef.getOrderedByAuthorOnlyRef();
-		    ArrayList<LibraryBook<String>> testAuthorSort = libRef.getOrderedByAuthor();
+		    List<LibraryBook<String>> refAuthorSort = libRef.getOrderedByAuthorRef();
+		    List<LibraryBook<String>> refAutherOnlySort = libRef.getOrderedByAuthorOnlyRef();
+		    List<LibraryBook<String>> testAuthorSort = libRef.getOrderedByAuthor();
 		    
 		    if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
 		    	gradePoint[0] = 100;
@@ -89,7 +91,7 @@ public class CheckLab {
 		    
 		    refAuthorSort = libRef.getOverdueListRef();
 		    try{
-		    	testAuthorSort = libRef.getOverdueList();
+		    	testAuthorSort = libRef.getOverdueList()
 		   
 			    if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
 			    	gradePoint[2] = 100;
@@ -151,7 +153,7 @@ public class CheckLab {
  */
 class LibraryRef<Type> extends Library<Type>{
 	
-	 protected static <ListType> void sort(ArrayList<ListType> list,
+	 protected static <ListType> void sort(List<ListType> list,
 		      Comparator<ListType> c) {
 		    for (int i = 0; i < list.size() - 1; i++) {
 		      int j, minIndex;
@@ -202,11 +204,11 @@ class LibraryRef<Type> extends Library<Type>{
 	  /**
 	   * Returns the list of library books, sorted by author
 	   */
-	  public ArrayList<LibraryBook<Type>> getOrderedByAuthorRef() {
+	  public List<LibraryBook<Type>> getOrderedByAuthorRef() {
 	    // *FILL IN -- do not return null
 	    //return null;
 		  
-		  ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
+		  List<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
 		  libraryCopy.addAll(library);
 		  
 		  OrderByAuthorRef comparator = new OrderByAuthorRef();
@@ -216,7 +218,7 @@ class LibraryRef<Type> extends Library<Type>{
 		  return libraryCopy;
 	  }
 
-	  public ArrayList<LibraryBook<Type>> getOrderedByAuthorOnlyRef() {
+	  public List<LibraryBook<Type>> getOrderedByAuthorOnlyRef() {
 		    // *FILL IN -- do not return null
 		    //return null;
 			  
@@ -235,7 +237,7 @@ class LibraryRef<Type> extends Library<Type>{
 	   *
 	   * If no library books are overdue, returns an empty list.
 	   */
-	  public ArrayList<LibraryBook<Type>> getOverdueListRef() {
+	  public List<LibraryBook<Type>> getOverdueListRef() {
 		ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
 		GregorianCalendar today = new GregorianCalendar();
 	
@@ -289,8 +291,8 @@ class LibraryRef<Type> extends Library<Type>{
 		  }	  
 	  }
 	  
-	  public boolean checkTwoLibrary(ArrayList<LibraryBook<Type>> ref1,
-			  ArrayList<LibraryBook<Type>> test){
+	  public boolean checkTwoLibrary(List<LibraryBook<Type>> ref1,
+			  List<LibraryBook<Type>> test){
 		  if(ref1.size() != test.size())
 			  return false;
 		  try{
@@ -305,13 +307,13 @@ class LibraryRef<Type> extends Library<Type>{
 		  return true;
 	  }
 	  
-	  public ArrayList<LibraryBook<Type>> getUnsortedList(){
+	  public List<LibraryBook<Type>> getUnsortedList(){
 		  ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
 		  libraryCopy.addAll(library);
 		  return libraryCopy;
 	  }
 	  
-	  public ArrayList<LibraryBook<Type>> getUnsortedDueList(){
+	  public List<LibraryBook<Type>> getUnsortedDueList(){
 		  ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
 		  for (int i = 0; i < library.size(); i++){
 			  if (library.get(i).getDueDate() != null){
@@ -321,8 +323,8 @@ class LibraryRef<Type> extends Library<Type>{
 		  return libraryCopy;
 	  }
 	  
-	  public ArrayList<LibraryBook<Type>> sortByStuAuthor(){
-		  ArrayList<LibraryBook<Type>> unsortList = getUnsortedList();
+	  public List<LibraryBook<Type>> sortByStuAuthor(){
+		  List<LibraryBook<Type>> unsortList = getUnsortedList();
 
 		  AuthorComparator comparator = new AuthorComparator();
 		  
@@ -330,8 +332,8 @@ class LibraryRef<Type> extends Library<Type>{
 	    	return unsortList;
 	  }
 	  
-	  public ArrayList<LibraryBook<Type>> sortByStuDueDate(){
-		  	ArrayList<LibraryBook<Type>> unsortList = getUnsortedDueList();
+	  public List<LibraryBook<Type>> sortByStuDueDate(){
+		  	List<LibraryBook<Type>> unsortList = getUnsortedDueList();
 			DueDateComparator comparator = new DueDateComparator();
 		  
 	    	Collections.sort(unsortList, comparator);
@@ -351,7 +353,7 @@ class LibraryRef<Type> extends Library<Type>{
 		    
 		  }
 	  
-	  public ArrayList<LibraryBook<Type>> getOrderedByISBNRef() {
+	  public List<LibraryBook<Type>> getOrderedByISBNRef() {
 		    // *FILL IN -- do not return null
 		    //return null;
 			  

@@ -189,6 +189,10 @@ public class CheckLab {
 
             try {
                 String[] no_anagram1 = AnagramUtil.getLargestAnagramGroup(FILE_DIR + "no_anagrams.txt");
+				System.out.println("no_anagram1: ");
+				for (String s : no_anagram1) {
+					System.out.println(s);
+				}
                 if (no_anagram1.length != 0)
                     output += "TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams \n";
                 else
@@ -267,6 +271,11 @@ public class CheckLab {
 
 		
 				String[] result2 = AnagramUtil.getLargestAnagramGroup(s_no_anagram2);
+				System.out.println("noAnagramsArray: ");
+				for (String s : result2) {
+					System.out.println(s);
+				}
+				System.out.println("length of result2: " + result2.length);
 				
 				if (result2.length != 0)
 					output+="TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams\n";
@@ -335,6 +344,11 @@ public class CheckLab {
         }
 
         arrayTestPrint(gradePoint, givenPoint);
+		
+		for (int i = 0; i < gradePoint.length; i++) {
+			System.out.println(gradePoint[i] + " ");
+		}
+
         System.out.println(output);
     }
     

@@ -10,7 +10,7 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab04"
-assignmentfiles = ["Book.java","LibraryBook.java","Library.java", "PhoneNumber.java"]
+assignmentfiles = ["Book.java","LibraryBook.java","Library.java", "PhoneNumber.java", "LibraryGenericTest.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab04/"
 compile_files =  ["Book.java","LibraryBook.java","Library.java", "PhoneNumber.java"]
 main_file = "CheckLab.java"
