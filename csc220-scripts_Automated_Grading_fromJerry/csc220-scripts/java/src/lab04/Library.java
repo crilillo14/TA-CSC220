@@ -78,6 +78,7 @@ public class Library<Type> { // TODO: Lab Part 2 Make the Library class generic 
 
 				lineNum++;
 			}
+			fileIn.close();
 		} catch (FileNotFoundException e) {
 			System.err.println(e.getMessage() + " Nothing added to the library.");
 			return;

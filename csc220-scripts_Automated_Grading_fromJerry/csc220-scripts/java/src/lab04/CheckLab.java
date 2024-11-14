@@ -87,9 +87,9 @@ public class CheckLab {
 		    libRef.checkoutRef(6000, "Jane Doe", 5, 2, 2019);
 		    
 		    
-		    refAuthorSort = libRef.getOverdueListRef(1, 1, 1906);
+		    refAuthorSort = libRef.getOverdueListRef();
 		    try{
-		    	testAuthorSort = libRef.getOverdueList(1, 1, 2016);
+		    	testAuthorSort = libRef.getOverdueList();
 		   
 			    if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
 			    	gradePoint[2] = 100;
@@ -101,7 +101,7 @@ public class CheckLab {
 			    	}else{
 			    		output += "## getOverdueList() doesn't sort and returned list is invalid\n";
 			    	}
-			    	refAuthorSort = libRef.getOverdueListRef(1, 1, 2216);
+			    	refAuthorSort = libRef.getOverdueListRef();
 			    	testAuthorSort = libRef.sortByStuDueDate();
 			    	
 			    	if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
@@ -114,7 +114,7 @@ public class CheckLab {
 		    }catch(Exception ex){
 		    	output += "## getOverdueList() threw " + ex + "\n"; 
 		    	
-		    	refAuthorSort = libRef.getOverdueListRef(1, 1, 2216);
+		    	refAuthorSort = libRef.getOverdueListRef();
 		    	testAuthorSort = libRef.sortByStuDueDate();
 		    	
 		    	if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
@@ -235,27 +235,23 @@ class LibraryRef<Type> extends Library<Type>{
 	   *
 	   * If no library books are overdue, returns an empty list.
 	   */
-	  public ArrayList<LibraryBook<Type>> getOverdueListRef(int month, int day,
-	      int year) {
-	    // FILL IN -- do not return null
-		  ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
-		  
-		  GregorianCalendar givenDueDate = new GregorianCalendar(year, month, day);
-		  
-		  // TODO: check whether using DATE is correct here
-		  for (int i = 0; i < library.size(); i++){
-			  if (library.get(i).getDueDate() != null){
-				  if (givenDueDate.compareTo(library.get(i).getDueDate()) >= 0)
-					  libraryCopy.add(library.get(i));
-			  }
-		  }
-		  
-		  OrderByDueDateRef comparator = new OrderByDueDateRef();
-		  
-		  sort(libraryCopy, comparator);
-		  
-	    return libraryCopy;
-	  }
+	  public ArrayList<LibraryBook<Type>> getOverdueListRef() {
+		ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
+		GregorianCalendar today = new GregorianCalendar();
+	
+		// Check for overdue books based on the current date
+		for (LibraryBook<Type> book : library) {
+			if (book.getDueDate() != null && book.getDueDate().compareTo(today) < 0) {
+				libraryCopy.add(book);
+			}
+		}
+	
+		OrderByDueDateRef comparator = new OrderByDueDateRef();
+		sort(libraryCopy, comparator);
+	
+		return libraryCopy;
+	}
+	
 
 	 /**
 	   * Comparator that defines an ordering among library books using the author,  and book title as a tie-breaker.
@@ -327,15 +323,18 @@ class LibraryRef<Type> extends Library<Type>{
 	  
 	  public ArrayList<LibraryBook<Type>> sortByStuAuthor(){
 		  ArrayList<LibraryBook<Type>> unsortList = getUnsortedList();
+
+		  AuthorComparator comparator = new AuthorComparator();
 		  
-	    	Collections.sort(unsortList, new Library.OrderByAuthor());
+	    	Collections.sort(unsortList, comparator);
 	    	return unsortList;
 	  }
 	  
 	  public ArrayList<LibraryBook<Type>> sortByStuDueDate(){
 		  	ArrayList<LibraryBook<Type>> unsortList = getUnsortedDueList();
+			DueDateComparator comparator = new DueDateComparator();
 		  
-	    	Collections.sort(unsortList, new Library.OrderByDueDate());
+	    	Collections.sort(unsortList, comparator);
 	    	return unsortList;
 	  }
 	  
