@@ -4,6 +4,8 @@ If you're reading this, it's probable that you're a new CSC220 TA working for Dr
 
 I won't lie, this codebase is kind of hectic, and a lot of it is legacy code (os was deprecated since python 2.7!), but it is not too bad once you get used to the structure of each lab and its correspoinding grading rubric and testing scripts. 
 
+If you still don't have Box Drive, click this link{https://www.box.com/resources/downloads}. 
+
 ## Things you want to make sure you do: 
 
 ### Change hardcoded filepaths 
