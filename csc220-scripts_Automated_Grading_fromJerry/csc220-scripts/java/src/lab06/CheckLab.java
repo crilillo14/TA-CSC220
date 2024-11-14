@@ -184,6 +184,9 @@ public class CheckLab {
             // For getLargestAnagramGroup tests, use the existing implementation
             // as it already works with your AnagramUtil implementation
 
+			String[] anagram_middle_truth = {"crates", "Reacts"};
+			String[] anagram_end_truth = {"crates", "Reacts"};
+
             try {
                 String[] no_anagram1 = AnagramUtil.getLargestAnagramGroup(FILE_DIR + "no_anagrams.txt");
                 if (no_anagram1.length != 0)
@@ -194,7 +197,138 @@ public class CheckLab {
                 output += "## getLargestAnagramGroup(file) threw " + e + "\n";
             }
 
-            // ... [remaining tests]
+			
+			try { 
+				
+				String[] anagram_middle = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"anagram_middle.txt");
+				//String[] anagram_middle_truth = {"crates", "Reacts"};
+		
+				if (!ListsEqual(anagram_middle, anagram_middle_truth))
+					output+="TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the middle\n";
+				else
+					gradePoint[3]+=100*1.0/5.0;
+				
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
+			}
+				
+			try { 
+				
+				String[] anagram_end = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"anagram_end.txt");
+				//String[] anagram_end_truth = {"crates", "Reacts"};
+		
+				if (!ListsEqual(anagram_end, anagram_end_truth))
+					output+="TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the end\n";
+				else
+					gradePoint[3]+=100*1.0/5.0;
+
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
+			}
+
+			try { 
+				String[] anagram_sample_file = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"sample_word_list.txt");
+				String[] anagram_sample_file_truth = {"carets", "Caters", "caster", "crates", "Reacts", "recast", "traces"};
+		
+				if (!ListsEqual(anagram_sample_file, anagram_sample_file_truth))
+					output+="TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt\n";
+				else
+					gradePoint[3]+=100*1.0/5.0;
+				
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
+			}
+
+			try {
+				/**
+				 * the empty file test has caused major issues for students; they seem to have forgotten 
+				 * this case. as such, this is considered the hardest test to pass and will be 
+				 * tested last. 
+				 */
+				
+				String[] empty_list1 = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"empty_file.txt");
+				
+				if (empty_list1.length != 0)
+					output+="TEST FAILED -- getLargestAnagramGroup(file) -- empty file\n";
+				else
+					gradePoint[3]+=100*1.0/5.0;
+
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
+			}
+				
+			
+			//********** with array 15% 
+			try {	
+
+				String[] no_anagram2 = {"praised", "crates", "bats", "tea"};
+				// has to be SortedString[] for the ListsEqual method to work, can't cast it.
+				SortedString[] s_no_anagram2 = SortedString.toSortedString(no_anagram2);
+
+		
+				String[] result2 = AnagramUtil.getLargestAnagramGroup(s_no_anagram2);
+				
+				if (result2.length != 0)
+					output+="TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams\n";
+				else
+					gradePoint[4]+=100*1.0/4.0;
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
+			}
+				
+			try {	
+				SortedString[] anagram_middle2 = {
+					new SortedString("praised"), 
+					new SortedString("crates"), 
+					new SortedString("Reacts"), 
+					new SortedString("bats"), 
+					new SortedString("tea")};
+				String[] result3 = AnagramUtil.getLargestAnagramGroup(anagram_middle2);
+				
+				if (!ListsEqual(result3, anagram_middle_truth))
+					output+="TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the middle\n";
+				else
+					gradePoint[4]+=100*1.0/4.0;
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
+			}
+
+			try {
+				
+				String[] anagram_end2 = {"praised", "bats", "tea", "crates", "Reacts"};
+				SortedString[] s_anagram_end2 = SortedString.toSortedString(anagram_end2);
+
+				String[] result4 = AnagramUtil.getLargestAnagramGroup(s_anagram_end2);
+				
+				if (!ListsEqual(result4, anagram_end_truth))
+					output+="TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the end\n";
+				else
+					gradePoint[4]+=100*1.0/4.0;
+
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
+			}
+
+			try { 
+				
+				/**
+				 * the empty list test has also caused major issues for students; 
+				 * this has been moved to be the final test.
+				 */
+				String[] empty_list2 = AnagramUtil.getLargestAnagramGroup(new SortedString[0]);
+				
+				if (empty_list2.length != 0)
+					output+="TEST FAILED -- getLargestAnagramGroup([]) -- empty list\n";
+				else
+					gradePoint[4]+=100*1.0/4.0;
+			} catch (Exception e) {
+				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
+			}
+
+
+			// end of tests ****************************************************
+
+
 
         } catch (Exception ex) {
             output += "program threw " + ex + "\n";
