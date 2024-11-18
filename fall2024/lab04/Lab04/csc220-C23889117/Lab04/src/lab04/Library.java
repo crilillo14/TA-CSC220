@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Class representation of a library (a collection of library books).

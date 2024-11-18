@@ -433,8 +433,10 @@ def submit_grade_in_box(dist_disk,box_add):
 		review_file = student[0]+"_"+assignment.lower()+"_comments"
 		disk_stu_lab_comment = dist_disk+"/"+"csc220-"+student[0]
 		box_stu_lab_comment = box_add+"csc220-"+student[0]
+		if not os.path.exists(review_file+".txt"):
+			continue
 		#shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-		python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " + disk_stu_lab_comment + "/" + review_file+".pdf" + " " \
+		python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " + disk_stu_lab_comment + "/" + review_file+".pdf" + " " \
 		+ disk_stu_lab_comment + "/" + review_file+".txt"
 		run = os.popen(python_run);
 		#make the pdf
@@ -477,9 +479,9 @@ def does_pdf_exist(dist_disk,box_add):
 # replace_private_with_protected(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add+assignment)
+# check_assignment_for_student(disk_main_add+assignment)
 
 # fifth
 #put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 #does_pdf_exist(disk_main_add+assignment,distadd)

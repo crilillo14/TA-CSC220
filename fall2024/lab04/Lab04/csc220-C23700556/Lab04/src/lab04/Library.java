@@ -293,22 +293,27 @@ public class Library<Type> { //TODO: Lab Part 2 Make the Library class generic (
    *
    * If no library books are overdue, returns an empty list.
    */
-  
-  public ArrayList<LibraryBook<Type>> getOverdueList(int month, int day, int year) {
-		 
-	  ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList <LibraryBook<Type>>();
-		 GregorianCalendar date = new GregorianCalendar (year, month, day);
-		 DueDateComparator comparator = new DueDateComparator();
 
-		 for(LibraryBook<Type> lb: library) {
-			 if(lb.getDueDate() == null) {
-			 } else 
-			 if(lb.getDueDate().before(date)) libraryCopy.add(lb);
-		 }
-		 
-		 sort(libraryCopy, comparator);
-		 return libraryCopy;
-	  }
+  public ArrayList<LibraryBook<Type>> getOverdueList() {
+      // TODO Assignment part 2
+      ArrayList<LibraryBook<Type>> libraryCopy = new ArrayList<LibraryBook<Type>>();
+
+      for (int i = 0; i < this.library.size(); i++) {
+          // First, checks that dueDate is not null to be able to call compareTo with the
+          // current date
+          // Then compares if its older.
+          if (this.library.get(i).getDueDate() != null
+                  && this.library.get(i).getDueDate().compareTo(new GregorianCalendar()) < 0) {
+              libraryCopy.add(this.library.get(i));
+          }
+      }
+
+      DueDateComparator comparator = new DueDateComparator();
+
+      sort(libraryCopy, comparator);
+
+      return libraryCopy;
+  }
  
  /**
    * Comparator that defines an ordering among library books using the author,  and book title as a tie-breaker.

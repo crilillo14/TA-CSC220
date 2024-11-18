@@ -51,7 +51,7 @@ public class CheckLab {
 		    
 		    List<LibraryBook<String>> refAuthorSort = libRef.getOrderedByAuthorRef();
 		    List<LibraryBook<String>> refAutherOnlySort = libRef.getOrderedByAuthorOnlyRef();
-		    List<LibraryBook<String>> testAuthorSort = libRef.getOrderedByAuthor();
+		    List<LibraryBook<String>> testAuthorSort = (List<LibraryBook<String>>) libRef.getOrderedByAuthor();
 		    
 		    if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
 		    	gradePoint[0] = 100;
@@ -90,7 +90,7 @@ public class CheckLab {
 		    
 		    refAuthorSort = libRef.getOverdueListRef();
 		    try{
-		    	testAuthorSort = libRef.getOverdueList();
+		    	testAuthorSort = (List<LibraryBook<String>>) libRef.getOverdueList();
 		   
 			    if(libRef.checkTwoLibrary(refAuthorSort, testAuthorSort)){
 			    	gradePoint[2] = 100;

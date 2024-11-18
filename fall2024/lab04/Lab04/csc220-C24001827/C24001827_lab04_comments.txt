@@ -9,13 +9,13 @@ Grading Rubric:
 
 Submitted                      15/15
 Correct Submission              5/ 5
-Compiles                        0/15
-Runs                            0/10
-OrderByIsbn                     0/10
-OrderByAuthor                   0/10
-getOrderedByAuthor()            0/10
-OrderByDueDate                  0/10
-getOverdueList()                0/15
+Compiles                        15/15
+Runs                            10/10
+OrderByIsbn                     10/10
+OrderByAuthor                   10/10
+getOrderedByAuthor()            10/10
+OrderByDueDate                  10/10
+getOverdueList()                15/15
 
 SCORE    20 / 100
 

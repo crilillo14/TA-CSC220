@@ -343,15 +343,17 @@ public class Library<Type> { //TODO: Lab Part 2 Make the Library class generic (
   // /**
   //  * Comparator that defines an ordering among library books using the due date.
   //  */
-  protected class DueDateComparator implements Comparator<LibraryBook<Type>> {
-     // TODO: Assignment Part 2
-	  @Override 
-	  public int compare(LibraryBook<Type> book1, LibraryBook<Type> book2) {
-		  return (book1.getDueDate().compareTo(book2.getDueDate()));
-	  }
-      
-   }
+
 
 
    }
+
+   protected class DueDateComparator implements Comparator<LibraryBook<Type>> {
+    // TODO: Assignment Part 2
+   @Override 
+   public int compare(LibraryBook<Type> book1, LibraryBook<Type> book2) {
+     return (book1.getDueDate().compareTo(book2.getDueDate()));
+   }
+     
+  }
 }
