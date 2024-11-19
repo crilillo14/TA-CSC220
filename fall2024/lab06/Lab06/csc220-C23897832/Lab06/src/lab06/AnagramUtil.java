@@ -32,8 +32,7 @@ public class AnagramUtil {
      */
     public static String[] getLargestAnagramGroup(String filename){
         SortedString[] words = readFile(filename);
-        MergeSort<SortedString> sorter = new MergeSort<>();
-        String[] toReturn = getLargestAnagramGroup(words, sorter);
+        String[] toReturn = getLargestAnagramGroup(words);
         return toReturn;
     }
 
@@ -43,7 +42,7 @@ public class AnagramUtil {
      * @param stringList an array of SortedString objects
      * @return an array of strings containing the largest group of anagrams
      */
-    public static String[] getLargestAnagramGroup(SortedString[] stringList, MergeSort<SortedString> sorter){
+    public static String[] getLargestAnagramGroup(SortedString[] stringList){
 
         //TODO Assignment Part 1
 
