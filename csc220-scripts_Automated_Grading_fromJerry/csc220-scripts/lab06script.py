@@ -252,9 +252,9 @@ def check_assignment_for_student(dist_disk):
 	# creates the header for rubric file
 	assignment_checking_rubric_all(rubric_all_file)
 	for student in students:
+     
 		print("Checking now for " + student[1] + " " + student[2])
-		if student[1] + " " + student[2] == "Blas Miguel":
-			continue
+
 
   
 		is_late = False
@@ -459,10 +459,10 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-# check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)
