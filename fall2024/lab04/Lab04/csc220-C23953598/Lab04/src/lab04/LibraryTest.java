@@ -12,40 +12,59 @@ import java.util.Random;
 public class LibraryTest {
 
   public static void main(String[] args) {
-	  
-	  //lab03 - part 2 samples
-	  //book1
-	  //isbn:  9780374292799L
-	  //author:  Thomas L. Friedman
-	  //title: The World is Flat
-	  
-	 // book2
-	 // isbn:  9780330351690L
-	 // author:  Jon Krakauer
-	 // title: Into the Wild	 
-	 
-	// lab03 - part 3 tests
-	
-	Library lib = new Library();
-	
+    // test an empty library
+    Library lib = new Library();
+
     if (lib.lookup(978037429279L) != null)
-        System.err.println("TEST FAILED -- empty library: lookup(isbn)");	
-	
-    // test a small library - with four books in it
+      System.err.println("TEST FAILED -- empty library: lookup(isbn)");
+    
+    ArrayList<LibraryBook> booksCheckedOut = lib.lookup("Jane Doe");
+    
+    if (booksCheckedOut == null || booksCheckedOut.size() != 0)
+      System.err.println("TEST FAILED -- empty library: lookup(holder)");
+    
+    if (lib.checkout(978037429279L, "Jane Doe", 1, 1, 2008))
+      System.err.println("TEST FAILED -- empty library: checkout");
+    
+    if (lib.checkin(978037429279L))
+      System.err.println("TEST FAILED -- empty library: checkin(isbn)");
+    
+    if (lib.checkin("Jane Doe"))
+      System.err.println("TEST FAILED -- empty library: checkin(holder)");
+
+    // test a small library
     lib.add(9780374292799L, "Thomas L. Friedman", "The World is Flat");
     lib.add(9780330351690L, "Jon Krakauer", "Into the Wild");
-    lib.add(9780446580342L, "David Baldacci", "Simple Genius");	
-	
+    lib.add(9780446580342L, "David Baldacci", "Simple Genius");
+
     if (lib.lookup(9780330351690L) != null)
-        System.err.println("TEST FAILED -- small library: lookup(isbn)");   
+      System.err.println("TEST FAILED -- small library: lookup(isbn)");    
     
-    lib.checkout(978037429279L, "Jane Doe", 1, 1, 2008);
+    if (!lib.checkout(9780330351690L, "Jane Doe", 1, 1, 2008))
+      System.err.println("TEST FAILED -- small library: checkout");
     
-    if (lib.lookup(9780330351690L) != null)
-        System.err.println("TEST FAILED -- small library: lookup(isbn)");  
-    
+    booksCheckedOut = lib.lookup("Jane Doe");
+        
+    if (booksCheckedOut == null
+        || booksCheckedOut.size() != 1
+        || !booksCheckedOut.get(0).equals(
+            new Book(9780330351690L, "Jon Krakauer", "Into the Wild"))
+        || !booksCheckedOut.get(0).getHolder().equals("Jane Doe")
+        || !booksCheckedOut.get(0).getDueDate().equals(
+            new GregorianCalendar(2008, 1, 1))){
+      System.err.println("TEST FAILED -- small library: lookup(holder)");
+    }
+    if (!lib.checkin(9780330351690L))
+      System.err.println("TEST FAILED -- small library: checkin(isbn)");
+    if (lib.checkin("Jane Doe"))
+      System.err.println("TEST FAILED -- small library: checkin(holder)");
+
+    // test a medium library
+    //lib.addAll("Mushroom_Publishing.txt");
+    // FILL IN
+
     System.out.println("Testing done.");
-    
   }
+
 
 }
