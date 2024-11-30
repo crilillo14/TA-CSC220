@@ -3,6 +3,7 @@ package lab06;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CheckLab {
     public static String FILE_DIR = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/";
@@ -189,9 +190,11 @@ public class CheckLab {
 
             try {
                 String[] no_anagram1 = AnagramUtil.getLargestAnagramGroup(FILE_DIR + "no_anagrams.txt");
-                if (no_anagram1.length != 0)
-                    output += "TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams \n";
-                else
+                if (no_anagram1.length != 0) {
+					output += "TEST FAILED -- getLargestAnagramGroup(file) -- list with no anagrams \n";
+					output += "Expected: []\n";
+					output += "Received: " + Arrays.toString(no_anagram1) + "\n";
+				} else
                     gradePoint[3] += 100 * 1.0 / 5.0;
             } catch (Exception e) {
                 output += "## getLargestAnagramGroup(file) threw " + e + "\n";
@@ -203,8 +206,11 @@ public class CheckLab {
 				String[] anagram_middle = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"anagram_middle.txt");
 				//String[] anagram_middle_truth = {"crates", "Reacts"};
 		
-				if (!ListsEqual(anagram_middle, anagram_middle_truth))
+				if (!ListsEqual(anagram_middle, anagram_middle_truth)) {
 					output+="TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the middle\n";
+					output += "Expected: " + Arrays.toString(anagram_middle_truth) + "\n";
+					output += "Received: " + Arrays.toString(anagram_middle) + "\n";
+				} 
 				else
 					gradePoint[3]+=100*1.0/5.0;
 				
@@ -217,10 +223,14 @@ public class CheckLab {
 				String[] anagram_end = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"anagram_end.txt");
 				//String[] anagram_end_truth = {"crates", "Reacts"};
 		
-				if (!ListsEqual(anagram_end, anagram_end_truth))
+				if (!ListsEqual(anagram_end, anagram_end_truth)){
 					output+="TEST FAILED -- getLargestAnagramGroup(file) -- 1 anagram in the end\n";
-				else
+					output += "Expected: " + Arrays.toString(anagram_end_truth) + "\n";
+					output += "Received: " + Arrays.toString(anagram_end) + "\n";
+				}
+				else {
 					gradePoint[3]+=100*1.0/5.0;
+				}
 
 			} catch (Exception e) {
 				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
@@ -230,10 +240,14 @@ public class CheckLab {
 				String[] anagram_sample_file = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"sample_word_list.txt");
 				String[] anagram_sample_file_truth = {"carets", "Caters", "caster", "crates", "Reacts", "recast", "traces"};
 		
-				if (!ListsEqual(anagram_sample_file, anagram_sample_file_truth))
+				if (!ListsEqual(anagram_sample_file, anagram_sample_file_truth)) {
 					output+="TEST FAILED -- getLargestAnagramGroup(file) -- sample_word_list.txt\n";
-				else
+					output += "Expected: " + Arrays.toString(anagram_sample_file_truth) + "\n";
+					output += "Received: " + Arrays.toString(anagram_sample_file) + "\n";
+				}
+				else {
 					gradePoint[3]+=100*1.0/5.0;
+				}
 				
 			} catch (Exception e) {
 				output += "## getLargestAnagramGroup(file) threw " + e + "\n"; 
@@ -248,8 +262,11 @@ public class CheckLab {
 				
 				String[] empty_list1 = AnagramUtil.getLargestAnagramGroup(FILE_DIR+"empty_file.txt");
 				
-				if (empty_list1.length != 0)
+				if (empty_list1.length != 0) {
 					output+="TEST FAILED -- getLargestAnagramGroup(file) -- empty file\n";
+					output += "Expected: []\n";
+					output += "Received: " + Arrays.toString(empty_list1) + "\n";
+				}
 				else
 					gradePoint[3]+=100*1.0/5.0;
 
@@ -268,10 +285,14 @@ public class CheckLab {
 		
 				String[] result2 = AnagramUtil.getLargestAnagramGroup(s_no_anagram2);
 				
-				if (result2.length != 0)
+				if (result2.length != 0) {
 					output+="TEST FAILED -- getLargestAnagramGroup([]) -- list with no anagrams\n";
-				else
+					output += "Expected: []\n";
+					output += "Received: " + Arrays.toString(result2) + "\n";
+				}
+				else {
 					gradePoint[4]+=100*1.0/4.0;
+				}
 			} catch (Exception e) {
 				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
 			}
@@ -285,8 +306,11 @@ public class CheckLab {
 					new SortedString("tea")};
 				String[] result3 = AnagramUtil.getLargestAnagramGroup(anagram_middle2);
 				
-				if (!ListsEqual(result3, anagram_middle_truth))
+				if (!ListsEqual(result3, anagram_middle_truth)) {
 					output+="TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the middle\n";
+					output += "Expected: " + Arrays.toString(anagram_middle_truth) + "\n";
+					output += "Received: " + Arrays.toString(result3) + "\n";
+				}
 				else
 					gradePoint[4]+=100*1.0/4.0;
 			} catch (Exception e) {
@@ -300,10 +324,16 @@ public class CheckLab {
 
 				String[] result4 = AnagramUtil.getLargestAnagramGroup(s_anagram_end2);
 				
-				if (!ListsEqual(result4, anagram_end_truth))
+				if (!ListsEqual(result4, anagram_end_truth)) {
 					output+="TEST FAILED -- getLargestAnagramGroup([]) -- 1 anagram in the end\n";
-				else
+					output += "Expected: " + Arrays.toString(anagram_end_truth) + "\n";
+					output += "Received: " + Arrays.toString(result4) + "\n";
+
+				}
+				else {
 					gradePoint[4]+=100*1.0/4.0;
+
+				}
 
 			} catch (Exception e) {
 				output += "## getLargestAnagramGroup([]) threw " + e + "\n"; 
@@ -317,8 +347,11 @@ public class CheckLab {
 				 */
 				String[] empty_list2 = AnagramUtil.getLargestAnagramGroup(new SortedString[0]);
 				
-				if (empty_list2.length != 0)
+				if (empty_list2.length != 0) {
 					output+="TEST FAILED -- getLargestAnagramGroup([]) -- empty list\n";
+					output += "Expected: []\n";
+					output += "Received: " + Arrays.toString(empty_list2) + "\n";
+				}
 				else
 					gradePoint[4]+=100*1.0/4.0;
 			} catch (Exception e) {

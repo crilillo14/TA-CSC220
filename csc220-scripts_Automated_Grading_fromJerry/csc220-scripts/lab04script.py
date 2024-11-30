@@ -5,6 +5,15 @@ from TextToPdf import write_simple_pdf
 
 students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
+
+# for individual testing
+
+students = [student[0] for student in students if student[0] in ["C23780653" , "C23953598"]]
+
+
+
+print(students)
+
 #usernames = [line[0] for line in lines]
 #print usernames
 
@@ -483,5 +492,5 @@ def does_pdf_exist(dist_disk,box_add):
 
 # fifth
 #put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# ubmit_grade_in_box(disk_main_add+assignment,distadd);
 #does_pdf_exist(disk_main_add+assignment,distadd)
