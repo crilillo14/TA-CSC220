@@ -8,11 +8,10 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 # for individual testing
 
-students = [student[0] for student in students if student[0] in ["C23780653" , "C23953598"]]
+# students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
 
 
 
-print(students)
 
 #usernames = [line[0] for line in lines]
 #print usernames
@@ -423,6 +422,7 @@ def check_wrong_package_name(dist_disk):
 def replace_private_with_protected(disk_loc):
 	for student in students:
 		file_loc = disk_loc+"/"+"csc220-"+student[0]+"/"+assignment+"/src/"+assignment.lower()+"/Library.java"
+		print(file_loc)
 		try:
 			file = open(file_loc,"r");
 			contents  = file.read();
@@ -475,14 +475,14 @@ def does_pdf_exist(dist_disk,box_add):
 # copy_assignment_with_name_late(distadd, disk_main_add+assignment);
 
 # this is for testing and printing 
-#submited_students = [line.strip() for line in open(disk_main_add+assignment+"/wednesday10am.txt")]
+# submited_students = [line.strip() for line in open(disk_main_add+assignment+"/wednesday10am.txt")]
 #print(submited_students)
 
 
 
 # third
 #  for testing bad packages 
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # pre-requisite to fourth 
 # replace_private_with_protected(disk_main_add+assignment)
@@ -492,5 +492,5 @@ def does_pdf_exist(dist_disk,box_add):
 
 # fifth
 #put grade
-# ubmit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 #does_pdf_exist(disk_main_add+assignment,distadd)

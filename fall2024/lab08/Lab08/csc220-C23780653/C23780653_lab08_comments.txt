@@ -1,0 +1,22 @@
+C23780653            Castro Gabriel
+
+
+Comments:
+
+Assignment submission is in improper format.
+
+
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              0/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                  16/16
+removeAll()                    16/16
+stutter()                      16/16
+shift()                        16/16
+
+SCORE    95 / 100
+

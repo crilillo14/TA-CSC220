@@ -1,6 +1,1 @@
 Username, First Name, Last Name
-C23740422, Lin, Zixian
-C23816383, Perez, Shawn
-C23816383, Perez, Shawn
-C23958869, Swarthout, Paige
-C23958869, Swarthout, Paige

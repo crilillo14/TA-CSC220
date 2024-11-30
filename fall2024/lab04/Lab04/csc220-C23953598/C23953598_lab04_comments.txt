@@ -3,12 +3,12 @@ C23953598            Neylon Ryan
 
 Comments:
 
-No assignment submitted.
+Does not compile.
 
 Grading Rubric: 
 
-Submitted                       0/15
-Correct Submission              0/ 5
+Submitted                      15/15
+Correct Submission              5/ 5
 Compiles                        0/15
 Runs                            0/10
 OrderByIsbn                     0/10
@@ -17,5 +17,5 @@ getOrderedByAuthor()            0/10
 OrderByDueDate                  0/10
 getOverdueList()                0/15
 
-SCORE    0 / 100
+SCORE    20 / 100
 

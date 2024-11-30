@@ -1,26 +1,3 @@
 Username, First Name, Last Name
-
-Checked: 
-# C23809451, Adenrele, Fey --- comment: should only get points for submission, a lot of code is missing
-
-C23981800, Ardila, Jose --- comment: should only get points for submission, none of the code is implemented
-
-# C23957852, Brenegan, Cassidy -- 100
-
-# C23956829, Clarke, Tijanni -- 100
-# C23700556, Diamond, Alessandra -- 100 - 5 incorrect getoverduelist()
-# C23941824, Geoghan, Brock -- 100 - 5, incorrect getoverduelist()
-# C23988962, Gregor, Daniel -- 100
-# C23985970, Jacoby, Iva 95
-# C23975918, Karim, Ishaq -- 100
-# C23740422, Lin, Zixian -- 60
-# C23966148, Montenegro Duarte, Mariana -- 100
-# C12140856, Moscato Galeno, Roman -- 100
-# C24001827, O'Neill, Shane -- 100
-# C23816383, Perez, Shawn -- 95
-# C23956123, Perron, Sabrina -- 95
-# C23969743, Rednam, Sid -- 95
-# C23889117, Shen, Yuhen -- 85 
-# C24031319, Stein, Orel -- 95
-# C23864585, Tegan, Luke -- 95
-Not checked: 
+C23780653, Castro, Gabriel
+C23953598, Neylon, Ryan

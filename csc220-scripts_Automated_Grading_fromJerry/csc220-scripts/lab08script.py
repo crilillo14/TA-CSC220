@@ -11,6 +11,10 @@ from TextToPdf import write_simple_pdf
 students = [line.strip().split(',') for line in open(
     '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
+# individual testing
+students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
+
+
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab08"
 assignmentfiles = ["ListNode.java",
@@ -492,7 +496,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-# submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-does_pdf_exist(disk_main_add+assignment,distadd)
+# does_pdf_exist(disk_main_add+assignment,distadd)
