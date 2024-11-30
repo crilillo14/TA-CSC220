@@ -15,11 +15,11 @@ from TextToPdf import write_simple_pdf
 students = [line.strip().split(',') for line in open(
     '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
 
-distadd = "/Users/Jerry/Box Sync/"
-assignment = "Lab10"
-assignmentfiles = ["PathFinder.java"]
+distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
+assignment = "Lab12"
+assignmentfiles = ["Pacman.java" , "PacmanTester.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab12/"
-compile_files = ["PathFinder.java"]
+compile_files = ["Pacman.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
 actual_point = [15, 5, 10, 5, 65]
