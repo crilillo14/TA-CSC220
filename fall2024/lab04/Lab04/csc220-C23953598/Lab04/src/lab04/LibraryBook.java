@@ -1,37 +1,38 @@
 package lab04;
 
-//import java.io.File;
-//import java.io.FileNotFoundException;
-//import java.text.ParseException;
-//import java.util.ArrayList;
 import java.util.GregorianCalendar;
-//import java.util.Scanner;
 
-
-public class LibraryBook extends Book {
-	
-	private String holder; 
-	private GregorianCalendar dueDate; 
+public class LibraryBook<Type> extends Book {
+	Type holder;
+	GregorianCalendar dueDate;
 	
 	public LibraryBook(long isbn, String author, String title){
 		super(isbn, author, title);
-		this.holder = null; 
-		this.dueDate = null; 
-	}
-	public String getHolder() {
-		return this.holder;
-	}
-	public GregorianCalendar getDueDate() {
-		return this.dueDate;
-	}
-	public void checkin() {
-		this.holder = null;
-		this.dueDate = null; 
-	}
-	public void checkout(String holder, GregorianCalendar dueDate) {
-		this.holder = holder; 
-		this.dueDate = dueDate; 
 	}
 
+	public Type getHolder(){
+		return holder;
+	}
 	
+	public GregorianCalendar getDueDate(){
+		return dueDate;
+	}
+	
+	public void checkin(){
+		// no late late comparison required
+		// If a library book is checked in, its holder and due date should be set to null.		
+		this.holder = null;
+		this.dueDate = null;
+	}
+	
+	public void checkout(Type holder, GregorianCalendar dueDate){
+		this.holder = holder;
+		this.dueDate = new GregorianCalendar(
+				dueDate.get(GregorianCalendar.YEAR), 
+				dueDate.get(GregorianCalendar.MONTH), 
+				dueDate.get(GregorianCalendar.DATE));
+		
+	}	
+	// Do not override the equals method in Book
+
 }
