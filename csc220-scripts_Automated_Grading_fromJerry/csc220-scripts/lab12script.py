@@ -13,16 +13,18 @@ import time
 from TextToPdf import write_simple_pdf
 
 students = [line.strip().split(',') for line in open(
-    '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
+    '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
-distadd = "/Users/Jerry/Box Sync/"
-assignment = "Lab10"
-assignmentfiles = ["PathFinder.java"]
+students = [student for student in students if student[0] in ["C23985390"]]
+
+distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
+assignment = "Lab12"
+assignmentfiles = ["Pacman.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab12/"
-compile_files = ["PathFinder.java"]
+compile_files = ["Pacman.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
-actual_point = [15, 5, 10, 5, 65]
+actual_point = [15, 5, 10, 5, 33 , 32]
 
 
 def check_correct_assignment_submission(distadd, assignment, filelist):
@@ -90,6 +92,8 @@ def copy_assignment_with_name(dist_box, dist_disk):
         os.makedirs(dist_disk)
         print(assignment + " -- Folder created")
     for student in students:
+        
+        print("Copying " + student[1] + " " + student[2] + "'s folder")
         lab_submit = dist_box + "csc220-" + student[0] + "/" + assignment
         if os.path.exists(lab_submit):
             shutil.copytree(lab_submit, dist_disk +
@@ -207,7 +211,7 @@ def assignment_checking_rubric_all(filename, student=None, points=None, is_late=
     if points is None:
         file = open(filename, "w")
         file.write("Last Name, First Name, Lab ID, Submitted, Correct Submission, " +
-                   "Compiles, Runs, solveMaze(), Signature Penalty, Total")
+                   "Compiles, Runs, solveBFS(), solveDFS(), Signature Penalty, Total")
     else:
         file = open(filename, "a+")
         file.write(student[2] + "," + student[1] + "," + student[0] + ",")
@@ -234,20 +238,15 @@ def check_if_actually_not_submitted(dist_disk_loc):
 
 def copy_maze_files(dist_disk_loc):
     # specify location of maze files 
-    root_loc = "/Users/Jerry/Documents/TA/fall2017/files/"
+    root_loc = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/files/mazes/"
 
     mazes = ["tinyMaze", "straight", "demoMaze", "turn",
-             "classic", "mediumMaze", "bigMaze", "unsolvable"]
+                 "classic", "mediumMaze", "bigMaze", "unsolvable", "randomMaze", "tinyOpen"]
 
     for maze in mazes:
         shutil.copyfile(root_loc + maze + ".txt", dist_disk_loc + maze + ".txt")
-
-    solutions = ["tinyMazeSol", "straightSol", "demoMazeSol", "turnSol",
-                 "classicSol", "mediumMazeSol", "bigMazeSol", "unsolvableSol"]
-                 
-    for sol in solutions:
-        shutil.copyfile(root_loc + sol + ".txt", dist_disk_loc + sol + ".txt")
-
+        shutil.copyfile(root_loc + maze + "BFSSol.txt", dist_disk_loc + maze + "BFSSol.txt")
+        shutil.copyfile(root_loc + maze + "DFSSol.txt", dist_disk_loc + maze + "DFSSol.txt")
 
 def check_assignment_for_student(dist_disk):
     """
@@ -256,6 +255,10 @@ def check_assignment_for_student(dist_disk):
     compile(10 points)
     run(5 points)
     solveMaze(65 points)
+    - solveBFS(32.5)
+    - solveDFS(32.5)
+    
+    ** changed fall 2024 - solveMaze split into solveBFS and solveDFS.
     """
     copy_a_backup_copy(dist_disk)
 
@@ -264,13 +267,15 @@ def check_assignment_for_student(dist_disk):
     submission_wrong = []
 
     submission_status = ["Submitted", "Correct Submission", "Compiles",
-                         "Runs", "solveMaze()"]
+                         "Runs", "solveBFS()",  "SolveDFS()"]
 
     review_file = assignment.lower() + "_comments.txt"
     rubric_all_file = dist_disk + "/" + assignment.lower() + "_rubric.csv"
     # creates the header for rubric file
     assignment_checking_rubric_all(rubric_all_file)
     for student in students:
+        if student[0] == "C23864585":
+            continue
         print("Checking now for " + student[1] + " " + student[2])
         is_late = False
         submission_point = []
@@ -323,7 +328,7 @@ def check_assignment_for_student(dist_disk):
             package_folder = stu_lab_file_loc + "/" + \
                 assignment + "/src/" + assignment.lower()
             # copy my CheckLab.java into each of the student's lab folder
-            src_main = "/Users/Jerry/Documents/workspace/TA/src/" + assignment.lower() + \
+            src_main = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/src/" + assignment.lower() + \
                 "/" + main_file
             shutil.copyfile(src_main, package_folder + "/" + main_file)
 
@@ -424,15 +429,21 @@ def check_wrong_package_name(dist_disk):
         file.write(ms[0] + ", " + ms[1] + ", " + ms[2] + "\n")
     file.close()
 
+# missing = ["C23959699", "C23962401", "C23866370", "C23871681", "C23985390", "C23854273", "C23777204", "C23959699", "C23962401", "C23866370", "C23998568", "C23985970", "C23871681", "C23812720", "C23740422", "C12140856", "C23816383", "C23985390", "C23854273"]
+
+# missing = set(missing)
+
 
 def submit_grade_in_box(dist_disk, box_add):
     # students.sort()
     for student in students:
+        # if student[0] in missing or student[0] in ["C23864585"]:
+        #     continue
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-        python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
             + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
             + disk_stu_lab_comment + "/" + review_file + ".txt"
         run = os.popen(python_run)
@@ -458,19 +469,19 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-#copy_assignment_with_name(distadd, disk_main_add + assignment)
+# copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

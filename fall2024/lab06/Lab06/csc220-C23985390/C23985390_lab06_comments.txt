@@ -3,19 +3,20 @@ C23985390            Sinaiko Nathan
 
 Comments:
 
-No assignment submitted.
+## insertionSort() threw java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 4
+## insertionSort() threw java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
 
 Grading Rubric: 
 
-Submitted                       0/15
-Correct Submission              0/ 5
-Compiles                        0/10
-Runs                            0/ 5
-sort()                          0/10
-areAnagrams()                   0/10
-insertionSort()                 0/15
-getLargestAnagramGroup(file)    0/15
-getLargestAnagramGroup([])      0/15
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                 5/15
+getLargestAnagramGroup(file)   15/15
+getLargestAnagramGroup([])     15/15
 
-SCORE    0 / 100
+SCORE    90 / 100
 

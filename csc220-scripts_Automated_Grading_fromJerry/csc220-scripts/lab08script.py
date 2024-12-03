@@ -12,7 +12,9 @@ students = [line.strip().split(',') for line in open(
     '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
 # individual testing
-students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
+students = [student for student in students if student[0] in ["C23985390"]]
+
+
 
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
@@ -452,8 +454,7 @@ def submit_grade_in_box(dist_disk, box_add):
     
     # students.sort()
     for student in students:
-        if student[0] in missing:
-            continue
+
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
@@ -484,7 +485,7 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-# check_shared_folder(distadd,assignment,assignmentfiles)
+#check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
 # copy_assignment_with_name(distadd, disk_main_add + assignment)
@@ -496,7 +497,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

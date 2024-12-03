@@ -1,10 +1,19 @@
 package lab06;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class AnagramUtil {
     public static boolean areAnagrams(SortedString str1, SortedString str2) {
         return str1.getSorted().equals(str2.getSorted());
+    }
+
+    public static String[] getLargestAnagramGroup(String filename){
+        SortedString[] words = readFile(filename);
+        String[] toReturn = getLargestAnagramGroup(words);
+        return toReturn;
     }
 
     public static String[] getLargestAnagramGroup(SortedString[] stringList) {
@@ -37,4 +46,21 @@ public class AnagramUtil {
         }
         return largestGroup;
     }
+
+    public static SortedString[] readFile(String filename) {
+        ArrayList<SortedString> results = new ArrayList<SortedString>();
+        try {
+            BufferedReader input = new BufferedReader(new FileReader(filename));
+            while(input.ready()) {
+                results.add(new SortedString(input.readLine()));
+            }
+            input.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        SortedString[] retval = new SortedString[1];
+        return results.toArray(retval);
+    }
+    
+
 }

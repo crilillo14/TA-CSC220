@@ -1,0 +1,20 @@
+C23740422            Lin Zixian
+
+
+Comments:
+
+Assignment submission is in improper format.
+
+
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              0/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     33/33
+SolveDFS()                     32/32
+
+SCORE    95 / 100
+

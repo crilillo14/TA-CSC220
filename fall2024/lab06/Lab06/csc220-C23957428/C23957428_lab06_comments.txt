@@ -1,5 +1,14 @@
 C23957428            Blas Miguel
 
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+sort()                         10/10
+areAnagrams()                  10/10
+insertionSort()                5/15
+getLargestAnagramGroup(file)   6/15
+getLargestAnagramGroup([])     8/15
 
-Comments:
+Score    74/100
 

@@ -1,0 +1,67 @@
+C23771484            Muscarello Mason
+
+
+Comments:
+
+## tinyMaze.txt: your solution file is empty
+## tinyMaze.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## demoMaze.txt: wall(X) count is incorrect. Correct wall count is 64
+your wall count is 44
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+your path size is 50
+## demoMaze.txt: wall(X) count is incorrect. Correct wall count is 64
+your wall count is 44
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 111
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+your path size is 396
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 111
+## classic.txt: dot(.) count is incorrect. Correct path size is 14
+your path size is 10
+## classic.txt: wall(X) count is incorrect. Correct wall count is 114
+your wall count is 80
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+your path size is 25
+## classic.txt: wall(X) count is incorrect. Correct wall count is 114
+your wall count is 80
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+your path size is 39
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 281
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+your path size is 101
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 281
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 705
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 705
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 283
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 283
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+your path size is 182
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 2706
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+your path size is 531
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 2706
+## tinyOpen.txt: your solution file is empty
+## tinyOpen.txt: your solution file is empty
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     16/33
+SolveDFS()                     12/32
+
+SCORE    63 / 100
+

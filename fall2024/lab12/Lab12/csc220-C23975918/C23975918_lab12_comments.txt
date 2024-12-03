@@ -1,0 +1,63 @@
+C23975918            Karim Ishaq
+
+
+Comments:
+
+## tinyMaze.txt: your solution file is empty
+## tinyMaze.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## turn.txt: dot(.) count is incorrect. Correct path size is 55
+your path size is 31
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 75
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+your path size is 230
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 75
+## classic.txt: your solution file is empty
+## classic.txt: your solution file is empty
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+your path size is 38
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 275
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+your path size is 100
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 275
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+your path size is 159
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 521
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+your path size is 159
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 521
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 277
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 277
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+your path size is 172
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 2629
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+your path size is 526
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 2629
+## tinyOpen.txt: your solution file is empty
+## tinyOpen.txt: your solution file is empty
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                      8/33
+SolveDFS()                      8/32
+
+SCORE    51 / 100
+

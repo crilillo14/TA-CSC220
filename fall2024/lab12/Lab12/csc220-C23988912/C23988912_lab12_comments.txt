@@ -1,0 +1,29 @@
+C23988912            Latif Shadi
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+your path size is 8
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+your path size is 20
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+your path size is 55
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+your path size is 26
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+your path size is 161
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+your path size is 1436
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     33/33
+SolveDFS()                     22/32
+
+SCORE    90 / 100
+

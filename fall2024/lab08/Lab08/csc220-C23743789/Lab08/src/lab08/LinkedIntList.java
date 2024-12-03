@@ -218,36 +218,24 @@ public class LinkedIntList {
      * The links of the list must be rearranged to achieve the desired result.</p>
      */
     public void shift() {
-        // TODO: Assignment part 2.2
-    	
-    	if (front == null || front.next == null) {
-    		return;
-    	}
-    	
-    	ListNode even = front;
-    	ListNode odd = front.next;
-    	ListNode last = front;
-    	ListNode oddFront = odd;
-    	
-    	while (last.next != null) {
-    		last = last.next;
-    	}
-    	
-    	ListNode end = last;
-    	
-    	while (even!= null && even.next != null && even.next.next != null) {
-    		odd = even.next;
-    		even.next = odd.next;
-    		
-    		end.next = odd;
-    		odd.next = null;
-    		
-    		end = end.next;
-    		
-    		even = even.next;
-    	}
-    	end.next = oddFront;
+        if (front == null || front.next == null) {
+            return;
+        }
+
+        ListNode even = front;
+        ListNode odd = front.next;
+        ListNode oddFront = odd;
+
+        while (odd != null && odd.next != null) {
+            even.next = odd.next;  // Link the current "even" node to the next "even" node.
+            even = even.next;      // Move to the next "even" node.
+            odd.next = even.next;  // Link the current "odd" node to the next "odd" node.
+            odd = odd.next;        // Move to the next "odd" node.
+        }
+
+        even.next = oddFront;      // Append the "odd" list to the end of the "even" list.
     }
 
-    
+
+
 }

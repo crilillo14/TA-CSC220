@@ -1,0 +1,18 @@
+C23948332            Pounder Amy
+
+
+Comments:
+
+
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     33/33
+SolveDFS()                     32/32
+
+SCORE    100 / 100
+

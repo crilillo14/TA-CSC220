@@ -13,6 +13,14 @@ public class SortedString implements Comparable<SortedString> {
         this.sorted = new String(chars);
     }
 
+    public static SortedString[] toSortedString(String[] strings) {
+        SortedString[] out = new SortedString[strings.length];
+        for (int i = 0; i < out.length; i++)
+            out[i] = new SortedString(strings[i]);
+        return out;
+    }
+
+
     public String getUnsorted() {
         return unsorted;
     }
@@ -24,5 +32,10 @@ public class SortedString implements Comparable<SortedString> {
 
     public String getSorted() {
         return sorted;
+    }
+
+    @Override
+    public String toString() {
+        return unsorted + "/" + sorted;
     }
 }

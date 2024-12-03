@@ -1,0 +1,32 @@
+30 30/n
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X          ...               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          .X.               X
+X          SXG               X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+

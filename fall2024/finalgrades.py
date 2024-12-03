@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 # Set assignment number
-assignment = '04'
+assignment = input("Enter the lab number: ")
 
 # File paths
 rubricPath = f"/Users/CristobalLillo_1/TA/fall2024/lab{assignment}/Lab{assignment}/lab{assignment}_rubric.csv"
