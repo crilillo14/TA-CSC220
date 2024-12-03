@@ -1,0 +1,35 @@
+C23988304            Morales Esteban
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+your path size is 8
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+your path size is 40
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+your path size is 755
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+your path size is 0
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+your path size is 0
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+your path size is 2958
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+your path size is 7
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     29/32.5
+SolveDFS()                     21/32.5
+
+SCORE    85 / 100
+

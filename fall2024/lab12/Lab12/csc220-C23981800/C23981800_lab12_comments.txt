@@ -1,0 +1,93 @@
+C23981800            Ardila Jose
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
+your path size is 0
+## tinyMaze.txt: wall(X) count is incorrect. Correct wall count is 38
+your wall count is 61
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+your path size is 0
+## tinyMaze.txt: wall(X) count is incorrect. Correct wall count is 38
+your wall count is 61
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## straight.txt: wall(X) count is incorrect. Correct wall count is 22
+your wall count is 28
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## straight.txt: wall(X) count is incorrect. Correct wall count is 22
+your wall count is 28
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 14
+your path size is 0
+## demoMaze.txt: wall(X) count is incorrect. Correct wall count is 64
+your wall count is 188
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+your path size is 0
+## demoMaze.txt: wall(X) count is incorrect. Correct wall count is 64
+your wall count is 188
+## turn.txt: dot(.) count is incorrect. Correct path size is 55
+your path size is 0
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 898
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+your path size is 0
+## turn.txt: wall(X) count is incorrect. Correct wall count is 143
+your wall count is 898
+## classic.txt: dot(.) count is incorrect. Correct path size is 14
+your path size is 0
+## classic.txt: wall(X) count is incorrect. Correct wall count is 114
+your wall count is 218
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+your path size is 0
+## classic.txt: wall(X) count is incorrect. Correct wall count is 114
+your wall count is 218
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+your path size is 0
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 646
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+your path size is 0
+## mediumMaze.txt: wall(X) count is incorrect. Correct wall count is 374
+your wall count is 646
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+your path size is 0
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 1367
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+your path size is 0
+## bigMaze.txt: wall(X) count is incorrect. Correct wall count is 722
+your wall count is 1367
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 646
+## unsolvable.txt: wall(X) count is incorrect. Correct wall count is 378
+your wall count is 646
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+your path size is 0
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 9998
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+your path size is 0
+## randomMaze.txt: wall(X) count is incorrect. Correct wall count is 2815
+your wall count is 9998
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+your path size is 0
+## tinyOpen.txt: wall(X) count is incorrect. Correct wall count is 16
+your wall count is 23
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+your path size is 0
+## tinyOpen.txt: wall(X) count is incorrect. Correct wall count is 16
+your wall count is 23
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     15/32.5
+SolveDFS()                     15/32.5
+
+SCORE    65 / 100
+

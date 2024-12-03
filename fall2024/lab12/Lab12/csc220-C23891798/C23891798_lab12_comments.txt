@@ -1,0 +1,37 @@
+C23891798            Hilgemberg Merlin Laura
+
+
+Comments:
+
+## tinyMaze.txt: your solution file is empty
+## tinyMaze.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## turn.txt: your solution file is empty
+## turn.txt: your solution file is empty
+## classic.txt: your solution file is empty
+## classic.txt: your solution file is empty
+## mediumMaze.txt: your solution file is empty
+## mediumMaze.txt: your solution file is empty
+## bigMaze.txt: your solution file is empty
+## bigMaze.txt: your solution file is empty
+## unsolvable.txt: your solution file is empty
+## unsolvable.txt: your solution file is empty
+## randomMaze.txt: your solution file is empty
+## randomMaze.txt: your solution file is empty
+## tinyOpen.txt: your solution file is empty
+## tinyOpen.txt: your solution file is empty
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                      0/32.5
+SolveDFS()                      0/32.5
+
+SCORE    35 / 100
+

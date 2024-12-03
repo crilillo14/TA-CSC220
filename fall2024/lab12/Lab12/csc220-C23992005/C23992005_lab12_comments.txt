@@ -1,0 +1,25 @@
+C23992005            Mucherla Hrishi
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
+your path size is 0
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+your path size is 0
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+your path size is 0
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     28/32.5
+SolveDFS()                     31/32.5
+
+SCORE    94 / 100
+
