@@ -197,7 +197,8 @@ public class Library<Type> {
      * @param currentDate The current date for determining overdue books.
      * @return A list of overdue books.
      */
-    public ArrayList<LibraryBook<Type>> getOverdueList(GregorianCalendar currentDate) {
+    public ArrayList<LibraryBook<Type>> getOverdueList() {
+        GregorianCalendar currentDate = new GregorianCalendar();
         ArrayList<LibraryBook<Type>> overdueBooks = new ArrayList<>();
         for (LibraryBook<Type> book : library) {
             if (book.getDueDate() != null && book.getDueDate().before(currentDate)) {
