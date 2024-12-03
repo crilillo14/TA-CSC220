@@ -1,2 +1,0 @@
-Username, First Name, Last Name
-C12140856, Moscato Galeno, Roman

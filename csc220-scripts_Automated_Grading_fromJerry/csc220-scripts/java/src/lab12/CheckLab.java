@@ -108,19 +108,22 @@ public class CheckLab {
 			points += 10;
 		}else{
 			message.append("## "+orifile+": wall(X) count is incorrect\n");
-			message.append()
+			message.append( "## " + orifile + ": correct wall count is " + sol_count[1] + "\n");
+			message.append( "## " + orifile + ": your wall count is " + test_count[1] + "\n");
 		}
 		
 		if(sol_count[2] == test_count[2]){
 			points += 10;
 		}else{
 			message.append("## " + orifile + ": should have one 'S'; you have no 'S' or you have more than one\n");
+			message.append("## " + orifile + ": your 'S' count is " + test_count[2] + "\n");
 		}
 		
 		if(sol_count[3] == test_count[3]){
 			points += 10;
 		}else{
 			message.append("## "+orifile+": should have one 'G'; you have no 'G' or you have more than one\n");
+			message.append("## " + orifile + ": your 'G' count is " + test_count[3] + "\n");
 		}
 		return points;
 	}
