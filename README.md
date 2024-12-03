@@ -1,10 +1,6 @@
-# Hey!
+LABS 4, 6, 8, 10, 12 fully functional and correspond to the CSC 220 syllabus as of Fall 2024.
 
-If you're reading this, it's probable that you're a new CSC220 TA working for Dr. Wang. 
-
-I won't lie, this codebase is kind of hectic, and a lot of it is legacy code (os was deprecated since python 2.7!), but it is not too bad once you get used to the structure of each lab and its correspoinding grading rubric and testing scripts. 
-
-If you still don't have Box Drive, click this link{https://www.box.com/resources/downloads}. 
+If you still don't have Box Drive, click this link{https://www.box.com/resources/downloads}. Or if using another cloud service, get the corresponding tool that makes cloud files accesible locally. 
 
 ## Things you want to make sure you do: 
 
@@ -32,7 +28,9 @@ src_main = "/Users/<YourUsername>/TA/csc220-scripts_Automated_Grading_fromJerry/
                 "/" + main_file
 ```
 
-I'll keep on adding to this later
 
+Workflow for this repo: 
+
+...
 
 
