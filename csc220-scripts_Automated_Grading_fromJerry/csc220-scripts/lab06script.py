@@ -8,7 +8,8 @@ from TextToPdf import write_simple_pdf
 students = [line.strip().split(',') for line in open(
 	'/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
-# students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
+
+students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
 
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
