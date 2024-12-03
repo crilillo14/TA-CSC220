@@ -10,10 +10,10 @@ package lab10;
 public class MaxHeap {
     
     /** Array to store the elements of the heap */
-    private int[] theData;
+    protected int[] theData;
     
     /** Number of current elements inside the heap */
-    private int size;
+    protected int size;
 
     /**
      * Constructor to initialize the heap array with a specified size.
@@ -60,7 +60,7 @@ public class MaxHeap {
      * @param pos the position of the child node
      * @return the index of the parent node
      */
-    private int parent(int pos) {
+    protected int parent(int pos) {
         return (pos - 1) / 2;
     }
 
@@ -69,7 +69,7 @@ public class MaxHeap {
      * @param pos the position of the parent node
      * @return the index of the left child node
      */
-    private int leftChild(int pos) {
+    protected int leftChild(int pos) {
         return 2 * pos + 1;
     }
 
@@ -78,7 +78,7 @@ public class MaxHeap {
      * @param pos the position of the parent node
      * @return the index of the right child node
      */
-    private int rightChild(int pos) {
+    protected int rightChild(int pos) {
         return 2 * pos + 2;
     }
 
@@ -87,7 +87,7 @@ public class MaxHeap {
      * @param pos the position of the node in the heap
      * @return true if the node is a leaf, false otherwise
      */
-    private boolean isLeaf(int pos) {
+    protected boolean isLeaf(int pos) {
         return (pos >= size / 2) && (pos < size);
     }
 
@@ -96,7 +96,7 @@ public class MaxHeap {
      * @param i the index of the first element
      * @param j the index of the second element
      */
-    private void swap(int i, int j) {
+    protected void swap(int i, int j) {
         int value = theData[i];
         theData[i] = theData[j];
         theData[j] = value;
@@ -130,7 +130,7 @@ public class MaxHeap {
      * @param level the depth level for indentation
      * NOTE this method should not be modified.
      */
-    private void printSideways(int root_indx, int level) {
+    protected void printSideways(int root_indx, int level) {
         if (root_indx < theData.length) {
             printSideways(rightChild(root_indx), level + 1);
             for (int i = 0; i < level; i++) {
@@ -180,7 +180,7 @@ public class MaxHeap {
 
     }
     
-    private void offerHelper(int index) {
+    protected void offerHelper(int index) {
         while (index > 0 && theData[parent(index)] < theData[index]) {
             swap(index, parent(index));
             index = parent(index);  
@@ -257,7 +257,7 @@ public class MaxHeap {
      * until the root.
      * @param index the index of the last node to consider for heapification
      */
-    private void heapify(int index) {
+    protected void heapify(int index) {
         if (index == 0) {
             return;
         }
@@ -279,7 +279,7 @@ public class MaxHeap {
      * @param index the index of the node to sift down
      * TODO Assignment Part 1
      */
-    private void siftDown(int index) {
+    protected void siftDown(int index) {
     	// TODO Assignment Part 1
     	int largest = index; 
         int left = leftChild(index);

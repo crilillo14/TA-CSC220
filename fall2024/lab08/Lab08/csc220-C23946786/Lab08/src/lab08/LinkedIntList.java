@@ -197,24 +197,24 @@ public class LinkedIntList {
 	 * Doubles the size of the list by replacing each integer in the list with two
 	 * of that integer. If the list is empty, this method does nothing.
 	 */
-	public void stutter() {
-		// TODO: Assignment part 2.1
+	public void stutter(){
+		//* FILL IN
+		if (front == null)
+			return;
 
-		ListNode currNode = front;
-		ListNode temp;
-		ListNode newNode;
-		while (currNode != null) {
-			
-			temp = currNode.next;
-			newNode = new ListNode(currNode.data);
-			currNode.next = newNode;
-			newNode.next = temp;
-			currNode = currNode.next;
+		ListNode new_node = new ListNode(front.data);
 
+		new_node.next = front;
+		ListNode current = front.next;
+		front = new_node;
+
+		while (current != null){
+			ListNode temp = new ListNode(current.data);
+			temp.next = current.next;
+			current.next = temp;
+			current = temp.next;
 		}
-
 	}
-
 	/**
 	 * Rearranges the list by moving all values at odd-numbered positions to the end
 	 * of the list. The original order of the elements is otherwise preserved.
@@ -225,30 +225,29 @@ public class LinkedIntList {
 	 * result.
 	 * </p>
 	 */
-	public void shift() {
-		// TODO: Assignment part 2.2
-		
-		ListNode currNode = front;
-		ListNode temp;
-		ListNode end;
-		int index = 0;
-		
-		while(currNode != null) {
-			
-			if(index % 2 == 0) {
-				temp = currNode.next.next;
-				end = currNode.next;
-				
-				while(end != null) {
-					if(end.next == null) {
-						end.next = currNode.next;
-						currNode.next = temp;
-					}
-					end = end.next;				
-				}	
-			}	
-			currNode = currNode.next;
-			index++;
+	public void shift(){
+		//* FILL IN
+		// Hint: keep a reference to the end of the list, it'll come handy
+		// or you can construct a list from very other element and concatenate it to the back...
+		if (front == null)
+			return;
+
+		ListNode current = front;
+
+		while (current.next != null)
+			current = current.next;
+
+		ListNode original_back = current;
+		ListNode current_back = original_back;
+
+		current = front;
+
+		while(current != original_back){
+			current_back.next = current.next;
+			current.next = current.next.next;
+			current_back = current_back.next;
+			current_back.next = null;
+			current = current.next;
 		}
 	}
 }

@@ -3,16 +3,16 @@ C23985390            Sinaiko Nathan
 
 Comments:
 
-No assignment submitted.
+
 
 Grading Rubric: 
 
-Submitted                       0/15
+Submitted                      15/15
 Correct Submission              0/ 5
-Compiles                        0/10
-Runs                            0/ 5
-solveBFS()                      0/33
-SolveDFS()                      0/32
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     33/33
+SolveDFS()                     32/32
 
-SCORE    0 / 100
+SCORE    100 / 100
 

@@ -15,6 +15,8 @@ from TextToPdf import write_simple_pdf
 students = [line.strip().split(',') for line in open(
     '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
+students = [student for student in students if student[0] in ["C23985390"]]
+
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab12"
 assignmentfiles = ["Pacman.java"]
@@ -427,36 +429,16 @@ def check_wrong_package_name(dist_disk):
         file.write(ms[0] + ", " + ms[1] + ", " + ms[2] + "\n")
     file.close()
 
-missing = [
-"C23959699", 
-"C23962401", 
-"C23866370", 
-"C23871681", 
-"C23985390", 
-"C23854273", 
-"C23777204", 
-"C23959699", 
-"C23962401", 
-"C23866370", 
-"C23998568", 
-"C23985970", 
-"C23871681", 
-"C23812720", 
-"C23740422", 
-"C12140856", 
-"C23816383", 
-"C23985390", 
-"C23854273",
-]
+# missing = ["C23959699", "C23962401", "C23866370", "C23871681", "C23985390", "C23854273", "C23777204", "C23959699", "C23962401", "C23866370", "C23998568", "C23985970", "C23871681", "C23812720", "C23740422", "C12140856", "C23816383", "C23985390", "C23854273"]
 
-missing = set(missing)
+# missing = set(missing)
 
 
 def submit_grade_in_box(dist_disk, box_add):
     # students.sort()
     for student in students:
-        if student[0] in missing or student[0] in ["C23864585"]:
-            continue
+        # if student[0] in missing or student[0] in ["C23864585"]:
+        #     continue
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
@@ -499,7 +481,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

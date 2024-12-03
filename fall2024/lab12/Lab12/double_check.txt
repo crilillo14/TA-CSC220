@@ -1,9 +1,1 @@
 Username, First Name, Last Name
-C23998568, Hromada, Andrew
-C23985970, Jacoby, Iva
-C23958903, Kao, Yu Ning
-C23740422, Lin, Zixian
-C24033344, Mirza, Annafi
-C12140856, Moscato Galeno, Roman
-C12140856, Moscato Galeno, Roman
-C24001827, O'Neill, Shane

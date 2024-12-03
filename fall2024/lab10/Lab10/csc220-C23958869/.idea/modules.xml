@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TA/TA.iml" filepath="$PROJECT_DIR$/TA/TA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csc220-C23958869.iml" filepath="$PROJECT_DIR$/csc220-C23958869.iml" />
+    </modules>
+  </component>
+</project>

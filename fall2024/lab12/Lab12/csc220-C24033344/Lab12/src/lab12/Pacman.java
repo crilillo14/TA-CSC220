@@ -222,8 +222,8 @@ public class Pacman {
 		queue.add(current);
 		maze[startX][startY].visited = true;
 		while (current.content != 'G') {
-			current = queue.getFirst();
-			queue.removeFirst();
+			current = queue.get(0);
+			queue.remove(0);
 			ArrayList<Node> neighbors = getNeighbors(current);
 			for (Node next : neighbors) {
 				queue.add(next);

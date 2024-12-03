@@ -8,7 +8,7 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 # for individual testing
 
-students = [student for student in students if student[0] in ["C23731142" , "C23879475", "C23779378"]]
+students = [student for student in students if student[0] in ["C23985390"]]
 
 
 
@@ -482,7 +482,7 @@ def does_pdf_exist(dist_disk,box_add):
 
 # third
 #  for testing bad packages 
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # pre-requisite to fourth 
 # replace_private_with_protected(disk_main_add+assignment)
@@ -492,5 +492,5 @@ def does_pdf_exist(dist_disk,box_add):
 
 # fifth
 #put grade
-submit_grade_in_box(disk_main_add+assignment,distadd);
+# submit_grade_in_box(disk_main_add+assignment,distadd);
 # does_pdf_exist(disk_main_add+assignment,distadd)

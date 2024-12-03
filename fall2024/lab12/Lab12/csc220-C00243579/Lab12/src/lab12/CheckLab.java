@@ -8,7 +8,9 @@ import java.nio.file.Paths;
 public class CheckLab {
 		
 	public static void main(String[] args){
-		String path = args[0]; // points to student src folder 
+
+
+		String path = args.length == 0 ? "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/files/mazes/" : args[0]; // points to student src folder 
 		double []gradePoint = {0, 0};
 	    double []givenPoint = {33 , 32};
 	    StringBuffer output = new StringBuffer("");
