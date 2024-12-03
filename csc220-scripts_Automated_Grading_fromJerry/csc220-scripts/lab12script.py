@@ -15,7 +15,7 @@ from TextToPdf import write_simple_pdf
 students = [line.strip().split(',') for line in open(
     '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
-students = [student for student in students if student[0] in ["C23985390"]]
+students = [student for student in students if student[0] in ["C23856776"]]
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab12"
@@ -478,7 +478,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-# check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 # submit_grade_in_box(disk_main_add+assignment,distadd);

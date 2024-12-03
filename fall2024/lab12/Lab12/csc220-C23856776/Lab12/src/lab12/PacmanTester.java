@@ -7,11 +7,11 @@ public class PacmanTester {
     public static void main(String[] args) {
     	
         // Input and output files (will find under src for lab12)
-        String inputFileName = "bigMaze.txt";
+        String inputFileName = "demoMaze.txt";
         
-        String outputFileNameBFS = "bigMazeBFSSol.txt";
+        String outputFileNameBFS = "demoMazeeBFSSol.txt";
         
-        String outputFileNameDFS = "bigMazeDFSSol.txt";
+        String outputFileNameDFS = "demoMazeDFSSol.txt";
         
 
         // Test 1: Gathering Input File

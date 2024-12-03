@@ -189,21 +189,18 @@ public class Pacman {
 		
 		if (inMaze(row - 1, height) && !maze[row - 1][col].isVisited() && !maze[row - 1][col].isWall()) {
 			
-			maze[row - 1][col].visited = true;
+			neighbors.add(maze[row - 1][col]);
 			
-			maze[row - 1][col].parent = currentNode; 
-			
-			neighbors.add(maze[row - 1][col]); // north
-		
+			maze[row - 1][col].parent = currentNode;  // north
 		}
 		
 		if (inMaze(row + 1, height) && !maze[row + 1][col].isVisited() && !maze[row + 1][col].isWall()) {
 			
-			maze[row + 1][col].visited = true; 
-			
-			maze[row + 1][col].parent = currentNode;
 			
 			neighbors.add(maze[row + 1][col]); // south
+			
+			maze[row + 1][col].parent = currentNode; 
+			
 			
 			
 		}
@@ -211,22 +208,20 @@ public class Pacman {
 		
 		if (inMaze(col + 1, width) && !maze[row][col + 1].isVisited() && !maze[row][col + 1].isWall()) {
 			
-			maze[row][col + 1].visited = true;
+						
+			neighbors.add(maze[row][col + 1]); // east
 			
 			maze[row][col + 1].parent = currentNode; 
-			
-			neighbors.add(maze[row][col + 1]); // east
 			
 			
 		}
 		
 		if (inMaze(col - 1, width) && !maze[row][col - 1].isVisited() && !maze[row - 1][col].isWall()) {
 			
-			maze[row][col - 1].visited = true; 
+					
+			neighbors.add(maze[row][col - 1]); // west
 			
 			maze[row][col - 1].parent = currentNode; 
-			
-			neighbors.add(maze[row][col - 1]); // west
 			
 		}
 
@@ -244,6 +239,7 @@ public class Pacman {
 		
 		queue.add(startNode); 
 		
+		
 		while (!queue.isEmpty()) {
 			
 			Node currentNode = queue.poll();
@@ -259,7 +255,13 @@ public class Pacman {
 			
 			for (Node neighbor : getNeighbors(currentNode)) {
 				
-				queue.add(neighbor);
+				if (!neighbor.isVisited()) {
+					
+					neighbor.visited = true;
+					
+					queue.add(neighbor);
+					
+				}
 			
 			}
 			
@@ -296,6 +298,16 @@ public class Pacman {
 				writeOutput();
 				
 				return; 
+			}
+			
+			for (Node neighbor : getNeighbors(currentNode)) {
+				
+				if (!neighbor.isVisited()) {
+					
+				neighbor.visited = true;
+				
+				stack.push(neighbor);
+				}
 			}
 		}
 		

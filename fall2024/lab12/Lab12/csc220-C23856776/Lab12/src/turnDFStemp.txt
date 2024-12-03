@@ -1,31 +1,31 @@
 30 30
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-X                            X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X           X                X
-X          SXG               X
+X          ..................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X...........X.               X
+X          .X................X
+X...........X               .X
+X.          X................X
+X..........SXG               X
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

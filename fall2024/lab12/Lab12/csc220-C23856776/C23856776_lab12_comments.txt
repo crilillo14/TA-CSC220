@@ -6,19 +6,13 @@ Comments:
 ## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
 your path size is 4
 ## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
-your path size is 0
-## straight.txt: dot(.) count is incorrect. Correct path size is 6
-your path size is 0
+your path size is 4
 ## demoMaze.txt: dot(.) count is incorrect. Correct path size is 14
 your path size is 7
 ## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
-your path size is 0
-## turn.txt: dot(.) count is incorrect. Correct path size is 405
-your path size is 0
+your path size is 29
 ## classic.txt: dot(.) count is incorrect. Correct path size is 14
 your path size is 12
-## classic.txt: dot(.) count is incorrect. Correct path size is 30
-your path size is 0
 ## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
 your path size is 0
 ## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
@@ -28,9 +22,7 @@ your path size is 0
 ## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
 your path size is 0
 ## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
-your path size is 0
-## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
-your path size is 0
+your path size is 873
 
 Grading Rubric: 
 
@@ -39,7 +31,7 @@ Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
 solveBFS()                     25/33
-SolveDFS()                     18/32
+SolveDFS()                     24/32
 
-SCORE    78 / 100
+SCORE    84 / 100
 
