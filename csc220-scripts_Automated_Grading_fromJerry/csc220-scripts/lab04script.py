@@ -8,7 +8,7 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 # for individual testing
 
-students = [student for student in students if student[0] in ["C23985390"]]
+# students = [student for student in students if student[0] in ["C23985390"]]
 
 
 
@@ -470,7 +470,7 @@ def does_pdf_exist(dist_disk,box_add):
 # check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second 
-# copy_assignment_with_name(distadd, disk_main_add+assignment);
+copy_assignment_with_name(distadd, disk_main_add+assignment);
 # secnd for late - must check for lateness
 # copy_assignment_with_name_late(distadd, disk_main_add+assignment);
 

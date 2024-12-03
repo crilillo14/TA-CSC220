@@ -1,2 +1,0 @@
-Username, First Name, Last Name
-C23777204, Bennett, Sean

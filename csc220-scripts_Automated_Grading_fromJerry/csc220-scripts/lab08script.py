@@ -12,7 +12,7 @@ students = [line.strip().split(',') for line in open(
     '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
 # individual testing
-students = [student for student in students if student[0] in ["C23985390"]]
+students = [student for student in students if student[0] in ["C23958869"]]
 
 
 
@@ -494,7 +494,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-# check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 # submit_grade_in_box(disk_main_add+assignment,distadd);

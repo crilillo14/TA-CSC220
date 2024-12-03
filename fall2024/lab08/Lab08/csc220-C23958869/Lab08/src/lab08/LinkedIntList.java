@@ -188,7 +188,9 @@ public class LinkedIntList {
     	ListNode current = front;
     	while(current != null) {
     		for(int i = 1; i < size()*2; i = i + 2) {
+                ListNode next = current.next;
     			add(i, current.data);
+                current = next;
     		}
     	}
     }
