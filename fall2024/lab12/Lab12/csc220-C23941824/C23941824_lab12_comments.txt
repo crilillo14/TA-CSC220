@@ -11,8 +11,8 @@ Submitted                      15/15
 Correct Submission              5/ 5
 Compiles                       10/10
 Runs                            5/ 5
-solveBFS()                     33/32.5
-SolveDFS()                     33/32.5
+solveBFS()                     33/33
+SolveDFS()                     32/32
 
-SCORE    101 / 100
+SCORE    100 / 100
 

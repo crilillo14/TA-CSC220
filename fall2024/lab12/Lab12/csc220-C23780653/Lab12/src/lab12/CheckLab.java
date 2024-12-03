@@ -10,7 +10,7 @@ public class CheckLab {
 	public static void main(String[] args){
 		String path = args[0]; // points to student src folder 
 		double []gradePoint = {0, 0};
-	    double []givenPoint = {32.5 , 32.5};
+	    double []givenPoint = {33 , 32};
 	    StringBuffer output = new StringBuffer("");
 		try{
 			String []mazes = {"tinyMaze", "straight", "demoMaze", "turn",

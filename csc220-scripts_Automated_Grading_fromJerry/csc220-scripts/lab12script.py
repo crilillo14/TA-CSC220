@@ -22,7 +22,7 @@ disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab12/"
 compile_files = ["Pacman.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
-actual_point = [15, 5, 10, 5, 32.5 , 32.5]
+actual_point = [15, 5, 10, 5, 33 , 32]
 
 
 def check_correct_assignment_submission(distadd, assignment, filelist):
@@ -209,7 +209,7 @@ def assignment_checking_rubric_all(filename, student=None, points=None, is_late=
     if points is None:
         file = open(filename, "w")
         file.write("Last Name, First Name, Lab ID, Submitted, Correct Submission, " +
-                   "Compiles, Runs, solveMaze(), Signature Penalty, Total")
+                   "Compiles, Runs, solveBFS(), solveDFS(), Signature Penalty, Total")
     else:
         file = open(filename, "a+")
         file.write(student[2] + "," + student[1] + "," + student[0] + ",")
@@ -427,15 +427,41 @@ def check_wrong_package_name(dist_disk):
         file.write(ms[0] + ", " + ms[1] + ", " + ms[2] + "\n")
     file.close()
 
+missing = [
+"C23959699", 
+"C23962401", 
+"C23866370", 
+"C23871681", 
+"C23985390", 
+"C23854273", 
+"C23777204", 
+"C23959699", 
+"C23962401", 
+"C23866370", 
+"C23998568", 
+"C23985970", 
+"C23871681", 
+"C23812720", 
+"C23740422", 
+"C12140856", 
+"C23816383", 
+"C23985390", 
+"C23854273",
+]
+
+missing = set(missing)
+
 
 def submit_grade_in_box(dist_disk, box_add):
     # students.sort()
     for student in students:
+        if student[0] in missing or student[0] in ["C23864585"]:
+            continue
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
-        python_run = "python " + disk_main_add + "txt2pdf.py" + " -qo " \
+        python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " \
             + disk_stu_lab_comment + "/" + review_file + ".pdf" + " " \
             + disk_stu_lab_comment + "/" + review_file + ".txt"
         run = os.popen(python_run)
@@ -470,10 +496,10 @@ def does_pdf_exist(dist_disk, box_add):
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-#submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
 # does_pdf_exist(disk_main_add+assignment,distadd)

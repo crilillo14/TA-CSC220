@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 # Set assignment number
-assignment = '12'
+assignment = input("Enter the lab number: ")
 
 # File paths
 rubricPath = f"/Users/CristobalLillo_1/TA/fall2024/lab{assignment}/Lab{assignment}/lab{assignment}_rubric.csv"
@@ -13,7 +13,6 @@ if not os.path.exists(gradingPath):
 
 # Read and process graded assignments
 df = pd.read_csv(rubricPath)
-print(df.columns)
 df.columns = df.columns.str.strip()
 df['weighted'] = (df['Total'] / 100) * 4.5
 df = df.sort_values('First Name')
