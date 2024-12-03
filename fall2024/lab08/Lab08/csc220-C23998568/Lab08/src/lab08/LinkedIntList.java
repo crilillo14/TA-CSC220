@@ -224,28 +224,24 @@ public class LinkedIntList {
 	 * </p>
 	 */
 	public void shift() {
+		if (front == null || front.next == null) {
+			return; // No shifting needed for empty or single-node lists.
+		}
 
-	    
-	    if (front == null || front.next == null) {
-	        return;
-	    }
-	    
-		ListNode evenCurrent = front;  
-	    ListNode oddStart = front.next; 
-	    ListNode oddCurrent = oddStart; 
+		ListNode evenCurrent = front;         // Start at the first (even-indexed) node.
+		ListNode oddStart = front.next;       // The head of the odd-indexed list.
+		ListNode oddCurrent = oddStart;       // Traverse the odd-indexed list.
 
-	    while (evenCurrent != null && evenCurrent.next != null && oddCurrent != null && oddCurrent.next != null) {
-	        evenCurrent.next = evenCurrent.next.next; 
-	        oddCurrent.next = oddCurrent.next.next;  
+		// Separate even and odd nodes.
+		while (oddCurrent != null && oddCurrent.next != null) {
+			evenCurrent.next = oddCurrent.next;
+			evenCurrent = evenCurrent.next;
 
-	        evenCurrent = evenCurrent.next;
-	        oddCurrent = oddCurrent.next;
-	    }
+			oddCurrent.next = evenCurrent.next;
+			oddCurrent = oddCurrent.next;
+		}
 
-	    evenCurrent = front;
-	    while (evenCurrent.next != null) {
-	        evenCurrent = evenCurrent.next;
-	    }
-	    evenCurrent.next = oddStart; 
-	    }
+		evenCurrent.next = oddStart; // Attach the odd-indexed list to the end of the even-indexed list.
+	}
+
 }

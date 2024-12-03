@@ -1,0 +1,4 @@
+3 10
+X X X X X X X X X X
+X S . . . . . . G X
+X X X X X X X X X X

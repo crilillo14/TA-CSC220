@@ -13,7 +13,7 @@ public class CheckLab {
 	    double []givenPoint = {65};
 	    StringBuffer output = new StringBuffer("");
 		try{
-			String []mazes = {"tinyMaze","straight","demoMaze","turn","classic","mediumMaze","bigMaze","unsolvable"};
+			String []mazes = {"tinyMaze","straight","demoMaze","turn","classic","mediumMaze","bigMaze","unsolvable", "randomMaze" , "tinyOpen"};
 			String []mazesSol = {"tinyMazeSol","straightSol","demoMazeSol","turnSol","classicSol","mediumMazeSol","bigMazeSol","unsolvableSol"};
 			
 			for(int i=0;i<mazes.length;i++){

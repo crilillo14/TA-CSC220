@@ -13,7 +13,7 @@ import time
 from TextToPdf import write_simple_pdf
 
 students = [line.strip().split(',') for line in open(
-    '/Users/Jerry/Documents/TA/fall2017/csc220-names.csv')]
+    '/Users/CristobalLillo_1/TA/csc220-names.csv')]
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab12"
@@ -90,6 +90,8 @@ def copy_assignment_with_name(dist_box, dist_disk):
         os.makedirs(dist_disk)
         print(assignment + " -- Folder created")
     for student in students:
+        
+        print("Copying " + student[1] + " " + student[2] + "'s folder")
         lab_submit = dist_box + "csc220-" + student[0] + "/" + assignment
         if os.path.exists(lab_submit):
             shutil.copytree(lab_submit, dist_disk +
@@ -458,16 +460,16 @@ def does_pdf_exist(dist_disk, box_add):
 
 # comment and uncomment each as you grade; don't uncomment all at once
 # first - just a check; no copying
-#check_shared_folder(distadd,assignment,assignmentfiles)
+# check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-#copy_assignment_with_name(distadd, disk_main_add + assignment)
+copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
-#check_wrong_package_name(disk_main_add+assignment)
+# check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add + assignment)
+# check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 #submit_grade_in_box(disk_main_add+assignment,distadd);

@@ -61,7 +61,7 @@ public class AnagramUtil {
     	}
 
         /* The variables for the logic following */
-        int end = 0, length = 1, i = 0, maxLength = 0;
+        int end = 0, length = 1, maxLength = 0;
 
         /* Loop through stringList.
          
@@ -74,7 +74,7 @@ public class AnagramUtil {
 
         */
         
-        for (int p = 0; i < sorted.length - 1; p++ ) {
+        for (int i = 0; i < sorted.length - 1; i++ ) {
         	if (areAnagrams(sorted[i], sorted[i+1] )) {
         		length++;
         	} else {

@@ -10,7 +10,7 @@ package lab08;
  * @see LinkedIntListTester
  */
 public class LinkedIntList {
-    private ListNode front; // Reference to the first node in the list
+    public ListNode front; // Reference to the first node in the list
 
     /**
      * Constructs an empty linked list.
@@ -111,4 +111,44 @@ public class LinkedIntList {
         result.append("]");
         return result.toString();
     }
+    public void removeAll(int value){
+		// @TA: There are many ways to do this. A cleaner way to do this is to write a helper function to find index first and then delete
+		//* FILL IN
+		if (front == null){
+			return;
+		}else{
+			while (front.data == value)
+				front = front.next;
+			ListNode current = front;
+			while (current.next != null){
+				while (current.next.data == value){
+					if (current.next.next == null){ 
+						// this case only happens if we are removing from the end of the list
+						current.next = null;
+						return;
+					}else{
+						current.next = current.next.next;
+					}
+				}
+				current = current.next;
+			}
+		}
+	}
+    
+    public int lastIndexOf(int value){
+		//* FILL IN - first thing to implement
+		int index = 0, index_toReturn = -1;
+		if (front == null){
+			return index_toReturn;
+		}else{
+			ListNode current = front;
+			while (current != null){
+				if (current.data == value)
+					index_toReturn = index;
+				current = current.next;
+				index++;
+			}
+		}
+		return index_toReturn;
+	}	
 }
