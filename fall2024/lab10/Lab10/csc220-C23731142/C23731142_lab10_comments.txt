@@ -3,19 +3,19 @@ C23731142            Artison Benny
 
 Comments:
 
-No assignment submitted.
+
 
 Grading Rubric: 
 
-Submitted                       0/15
-Correct Submission              0/ 5
-Compiles                        0/10
-Runs                            0/ 5
-constructor(int)                0/ 9
-insert()                        0/14
-removemax()                     0/14
-constructor(int[])              0/14
-sort()                          0/14
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+constructor(int)                9/ 9
+insert()                       14/14
+removemax()                    14/14
+constructor(int[])             14/14
+sort()                         14/14
 
-SCORE    0 / 100
+SCORE    100 / 100
 

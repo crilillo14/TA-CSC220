@@ -8,7 +8,8 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 # for individual testing
 
-students = [student for student in students if student[0] in ["C23953598"]]
+students = [student for student in students if student[0] in ["C23731142" , "C23879475", "C23779378"]]
+
 
 
 
@@ -442,8 +443,7 @@ def submit_grade_in_box(dist_disk,box_add):
 		review_file = student[0]+"_"+assignment.lower()+"_comments"
 		disk_stu_lab_comment = dist_disk+"/"+"csc220-"+student[0]
 		box_stu_lab_comment = box_add+"csc220-"+student[0]
-		if not os.path.exists(review_file+".txt"):
-			continue
+		
 		#shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
 		python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " + disk_stu_lab_comment + "/" + review_file+".pdf" + " " \
 		+ disk_stu_lab_comment + "/" + review_file+".txt"
@@ -482,15 +482,15 @@ def does_pdf_exist(dist_disk,box_add):
 
 # third
 #  for testing bad packages 
-# check_wrong_package_name(disk_main_add+assignment)
+#check_wrong_package_name(disk_main_add+assignment)
 
 # pre-requisite to fourth 
 # replace_private_with_protected(disk_main_add+assignment)
 
 # fourth
-check_assignment_for_student(disk_main_add+assignment)
+# check_assignment_for_student(disk_main_add+assignment)
 
 # fifth
 #put grade
-# submit_grade_in_box(disk_main_add+assignment,distadd);
-#does_pdf_exist(disk_main_add+assignment,distadd)
+submit_grade_in_box(disk_main_add+assignment,distadd);
+# does_pdf_exist(disk_main_add+assignment,distadd)

@@ -3,18 +3,27 @@ C23731142            Artison Benny
 
 Comments:
 
-No assignment submitted.
+TEST FAILED -- lastIndexOf() when 18 is last value
+TEST FAILED -- lastIndexOf() threw java.lang.NullPointerException: Cannot read field "next" because "<local2>" is null
+TEST FAILED -- stutter() when only 1 value present before the call.
+TEST FAILED -- stutter() when 2 values present before the call
+TEST FAILED -- stutter() when 5 values present before the call
+TEST FAILED -- stutter() threw java.lang.NullPointerException: Cannot read field "next" because "<local1>" is null
+TEST FAILED -- shift() threw java.lang.NullPointerException: Cannot read field "next" because "<local2>" is null
+TEST FAILED -- shift() threw java.lang.NullPointerException: Cannot read field "next" because "<local1>" is null
+TEST FAILED -- shift() threw java.lang.NullPointerException: Cannot read field "next" because "<local2>" is null
+TEST FAILED -- shift() threw java.lang.NullPointerException: Cannot read field "next" because "this.front" is null
 
 Grading Rubric: 
 
-Submitted                       0/15
-Correct Submission              0/ 5
-Compiles                        0/10
-Runs                            0/ 6
-lastIndexOf()                   0/16
-removeAll()                     0/16
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            6/ 6
+lastIndexOf()                  10/16
+removeAll()                    16/16
 stutter()                       0/16
 shift()                         0/16
 
-SCORE    0 / 100
+SCORE    62 / 100
 

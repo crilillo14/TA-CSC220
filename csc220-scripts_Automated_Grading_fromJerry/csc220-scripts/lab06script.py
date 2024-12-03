@@ -10,6 +10,8 @@ students = [line.strip().split(',') for line in open(
 
 # students = [student for student in students if student[0] in ["C23780653" , "C23953598"]]
 
+students = [student for student in students if student[0] in ["C23879475", "C23779378"]]
+
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab06"
@@ -413,7 +415,7 @@ def submit_grade_in_box(dist_disk, box_add):
     
     ## *TODO grade these manually, compile them by yourself
     
-    missing_students = ['C23879475','C23731142','C23959699','C23962401','C23866370','C23779378','C23871681','C23953598','C23985390','C23854273']
+    # missing_students = ['C23879475','C23731142','C23959699','C23962401','C23866370','C23779378','C23871681','C23953598','C23985390','C23854273']
     
     # students.sort()
     for student in students:
@@ -421,9 +423,9 @@ def submit_grade_in_box(dist_disk, box_add):
         review_file = student[0] + "_" + assignment.lower() + "_comments"
         
         # quick fix for missing students, should maybe create a directory for them, put the lab comments there, give them 0s, and upload pdfs to box
-        if student[0] in missing_students:
-            print("missing student: " + student[1]+ " " + student[2])
-            continue
+        # if student[0] in missing_students:
+        #     print("missing student: " + student[1]+ " " + student[2])
+        #     continue
         disk_stu_lab_comment = dist_disk + "/" + "csc220-" + student[0]
         box_stu_lab_comment = box_add + "csc220-" + student[0]
         # shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
@@ -465,7 +467,7 @@ def does_pdf_exist(dist_disk, box_add):
 # check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
-# submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 
 # sixth - verify pdf was uploaded
-does_pdf_exist(disk_main_add+assignment,distadd)
+# does_pdf_exist(disk_main_add+assignment,distadd)
