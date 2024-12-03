@@ -9,19 +9,44 @@ public class CheckLab {
 		
 	public static void main(String[] args){
 		String path = args[0]; // points to student src folder 
-		double []gradePoint = {0};
-	    double []givenPoint = {65};
+		double []gradePoint = {0, 0};
+	    double []givenPoint = {32.5 , 32.5};
 	    StringBuffer output = new StringBuffer("");
 		try{
-			String []mazes = {"tinyMaze","straight","demoMaze","turn","classic","mediumMaze","bigMaze","unsolvable", "randomMaze" , "tinyOpen"};
-			String []mazesSol = {"tinyMazeSol","straightSol","demoMazeSol","turnSol","classicSol","mediumMazeSol","bigMazeSol","unsolvableSol"};
+			String []mazes = {"tinyMaze", "straight", "demoMaze", "turn",
+                 "classic", "mediumMaze", "bigMaze", "unsolvable", "randomMaze", "tinyOpen"};
+			
+			
 			
 			for(int i=0;i<mazes.length;i++){
+
 				try {
+					// old lab code
+					// String originalmaze = mazes[i]+".txt";
+					// String genMaze = mazes[i]+"temp.txt";
+					// PathFinder.solveMaze(path+originalmaze,path+genMaze);
+
 					String originalmaze = mazes[i]+".txt";
-					String genMaze = mazes[i]+"temp.txt";
-					PathFinder.solveMaze(path+originalmaze,path+genMaze);
-					gradePoint[0] += two_file_compare(path+mazesSol[i]+".txt", path+genMaze, originalmaze, output);
+                    String genMazeBFS = mazes[i]+"BFStemp.txt";
+                    String genMazeDFS = mazes[i]+"DFStemp.txt";
+                    
+                    // BFS Solution
+                    Pacman pacmanBFS = new Pacman(path + originalmaze, path + genMazeBFS);
+                    pacmanBFS.solveBFS();
+                    pacmanBFS.writeOutput();
+
+					Pacman pacmanDFS = new Pacman(path + originalmaze, path + genMazeDFS);
+					pacmanDFS.solveDFS();
+					pacmanDFS.writeOutput();
+
+					String mazeSolBFS = mazes[i]+"BFSSol.txt";
+					String mazeSolDFS = mazes[i]+"DFSSol.txt";
+
+					gradePoint[0] += two_file_compare(path+mazeSolBFS, path+genMazeBFS, originalmaze, output);
+					gradePoint[0] += two_file_compare(path+mazeSolDFS, path+genMazeDFS, originalmaze, output);
+
+
+					//gradePoint[0] += two_file_compare(path+mazesSol[i]+".txt", path+genMaze, originalmaze, output);
 					//gradePoint[0] += two_file_compare(mazesSol[i]+".txt", genMaze, originalmaze, output);
 				} catch (Exception e) {
 					output.append("## testing on " + mazes[i] + " threw " + e + "\n");

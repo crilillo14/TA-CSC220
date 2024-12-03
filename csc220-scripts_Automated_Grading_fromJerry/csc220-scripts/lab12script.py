@@ -236,7 +236,7 @@ def check_if_actually_not_submitted(dist_disk_loc):
 
 def copy_maze_files(dist_disk_loc):
     # specify location of maze files 
-    root_loc = "/Users/Jerry/Documents/TA/fall2017/files/"
+    root_loc = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/files/mazes/"
 
     mazes = ["tinyMaze", "straight", "demoMaze", "turn",
              "classic", "mediumMaze", "bigMaze", "unsolvable"]
@@ -244,12 +244,12 @@ def copy_maze_files(dist_disk_loc):
     for maze in mazes:
         shutil.copyfile(root_loc + maze + ".txt", dist_disk_loc + maze + ".txt")
 
-    solutions = ["tinyMazeSol", "straightSol", "demoMazeSol", "turnSol",
-                 "classicSol", "mediumMazeSol", "bigMazeSol", "unsolvableSol"]
+    solutions = ["tinyMaze", "straight", "demoMaze", "turn",
+                 "classic", "mediumMaze", "bigMaze", "unsolvable", "randomMaze", "tinyOpen"]
                  
     for sol in solutions:
-        shutil.copyfile(root_loc + sol + ".txt", dist_disk_loc + sol + ".txt")
-
+        shutil.copyfile(root_loc + sol + "BFSSol.txt", dist_disk_loc + sol + "BFSSol.txt")
+        shutil.copyfile(root_loc + sol + "DFSSol.txt", dist_disk_loc + sol + "DFSSol.txt")
 
 def check_assignment_for_student(dist_disk):
     """
@@ -258,6 +258,10 @@ def check_assignment_for_student(dist_disk):
     compile(10 points)
     run(5 points)
     solveMaze(65 points)
+    - solveBFS(32.5)
+    - solveDFS(32.5)
+    
+    ** changed fall 2024 - solveMaze split into solveBFS and solveDFS.
     """
     copy_a_backup_copy(dist_disk)
 
@@ -266,7 +270,7 @@ def check_assignment_for_student(dist_disk):
     submission_wrong = []
 
     submission_status = ["Submitted", "Correct Submission", "Compiles",
-                         "Runs", "solveMaze()"]
+                         "Runs", "solveBFS()",  "SolveDFS()"]
 
     review_file = assignment.lower() + "_comments.txt"
     rubric_all_file = dist_disk + "/" + assignment.lower() + "_rubric.csv"
@@ -325,7 +329,7 @@ def check_assignment_for_student(dist_disk):
             package_folder = stu_lab_file_loc + "/" + \
                 assignment + "/src/" + assignment.lower()
             # copy my CheckLab.java into each of the student's lab folder
-            src_main = "/Users/Jerry/Documents/workspace/TA/src/" + assignment.lower() + \
+            src_main = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/java/src/" + assignment.lower() + \
                 "/" + main_file
             shutil.copyfile(src_main, package_folder + "/" + main_file)
 
