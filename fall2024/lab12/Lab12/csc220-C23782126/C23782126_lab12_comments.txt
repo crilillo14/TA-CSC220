@@ -1,0 +1,59 @@
+C23782126            Levine Aidan
+
+
+Comments:
+
+## tinyMaze.txt: your solution file is empty
+## tinyMaze.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## straight.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## demoMaze.txt: your solution file is empty
+## turn.txt: dot(.) count is incorrect. Correct path size is 55
+## turn.txt: wall(X) count is incorrect
+## turn.txt: should have one 'S'; you have no 'S' or you have more than one
+## turn.txt: should have one 'G'; you have no 'G' or you have more than one
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+## turn.txt: wall(X) count is incorrect
+## turn.txt: should have one 'S'; you have no 'S' or you have more than one
+## turn.txt: should have one 'G'; you have no 'G' or you have more than one
+## classic.txt: your solution file is empty
+## classic.txt: your solution file is empty
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+## mediumMaze.txt: wall(X) count is incorrect
+## mediumMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+## mediumMaze.txt: wall(X) count is incorrect
+## mediumMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: wall(X) count is incorrect
+## bigMaze.txt: should have one 'S'; you have no 'S' or you have more than one
+## bigMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: wall(X) count is incorrect
+## bigMaze.txt: should have one 'S'; you have no 'S' or you have more than one
+## bigMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## unsolvable.txt: wall(X) count is incorrect
+## unsolvable.txt: should have one 'G'; you have no 'G' or you have more than one
+## unsolvable.txt: wall(X) count is incorrect
+## unsolvable.txt: should have one 'G'; you have no 'G' or you have more than one
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+## randomMaze.txt: wall(X) count is incorrect
+## randomMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+## randomMaze.txt: wall(X) count is incorrect
+## randomMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## tinyOpen.txt: your solution file is empty
+## tinyOpen.txt: your solution file is empty
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                      6/32.5
+SolveDFS()                      6/32.5
+
+SCORE    47 / 100
+

@@ -1,0 +1,20 @@
+C23998568            Hromada Andrew
+
+
+Comments:
+
+Assignment submission is in improper format.
+
+## testing on unsolvable threw java.lang.NullPointerException: Cannot read field "content" because "<parameter1>" is null
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              0/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     29/32.5
+SolveDFS()                     29/32.5
+
+SCORE    88 / 100
+

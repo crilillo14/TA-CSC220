@@ -1,0 +1,31 @@
+C23856776            Joinville Billy
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 14
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+## classic.txt: dot(.) count is incorrect. Correct path size is 14
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     24/32.5
+SolveDFS()                     18/32.5
+
+SCORE    77 / 100
+

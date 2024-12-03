@@ -17,12 +17,12 @@ students = [line.strip().split(',') for line in open(
 
 distadd = "/Users/CristobalLillo_1/Library/CloudStorage/Box-Box/"
 assignment = "Lab12"
-assignmentfiles = ["Pacman.java" , "PacmanTester.java"]
+assignmentfiles = ["Pacman.java"]
 disk_main_add = "/Users/CristobalLillo_1/TA/fall2024/lab12/"
 compile_files = ["Pacman.java"]
 main_file = "CheckLab.java"
 main_class = "CheckLab"
-actual_point = [15, 5, 10, 5, 65]
+actual_point = [15, 5, 10, 5, 32.5 , 32.5]
 
 
 def check_correct_assignment_submission(distadd, assignment, filelist):
@@ -239,17 +239,12 @@ def copy_maze_files(dist_disk_loc):
     root_loc = "/Users/CristobalLillo_1/TA/csc220-scripts_Automated_Grading_fromJerry/csc220-scripts/files/mazes/"
 
     mazes = ["tinyMaze", "straight", "demoMaze", "turn",
-             "classic", "mediumMaze", "bigMaze", "unsolvable"]
+                 "classic", "mediumMaze", "bigMaze", "unsolvable", "randomMaze", "tinyOpen"]
 
     for maze in mazes:
         shutil.copyfile(root_loc + maze + ".txt", dist_disk_loc + maze + ".txt")
-
-    solutions = ["tinyMaze", "straight", "demoMaze", "turn",
-                 "classic", "mediumMaze", "bigMaze", "unsolvable", "randomMaze", "tinyOpen"]
-                 
-    for sol in solutions:
-        shutil.copyfile(root_loc + sol + "BFSSol.txt", dist_disk_loc + sol + "BFSSol.txt")
-        shutil.copyfile(root_loc + sol + "DFSSol.txt", dist_disk_loc + sol + "DFSSol.txt")
+        shutil.copyfile(root_loc + maze + "BFSSol.txt", dist_disk_loc + maze + "BFSSol.txt")
+        shutil.copyfile(root_loc + maze + "DFSSol.txt", dist_disk_loc + maze + "DFSSol.txt")
 
 def check_assignment_for_student(dist_disk):
     """
@@ -277,6 +272,8 @@ def check_assignment_for_student(dist_disk):
     # creates the header for rubric file
     assignment_checking_rubric_all(rubric_all_file)
     for student in students:
+        if student[0] == "C23864585":
+            continue
         print("Checking now for " + student[1] + " " + student[2])
         is_late = False
         submission_point = []
@@ -467,13 +464,13 @@ def does_pdf_exist(dist_disk, box_add):
 # check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second
-copy_assignment_with_name(distadd, disk_main_add + assignment)
+# copy_assignment_with_name(distadd, disk_main_add + assignment)
 
 # third
 # check_wrong_package_name(disk_main_add+assignment)
 
 # fourth
-# check_assignment_for_student(disk_main_add + assignment)
+check_assignment_for_student(disk_main_add + assignment)
 
 # fifth - put grade
 #submit_grade_in_box(disk_main_add+assignment,distadd);

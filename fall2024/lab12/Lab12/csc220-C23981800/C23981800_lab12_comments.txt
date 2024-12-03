@@ -1,0 +1,55 @@
+C23981800            Ardila Jose
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
+## tinyMaze.txt: wall(X) count is incorrect
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+## tinyMaze.txt: wall(X) count is incorrect
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+## straight.txt: wall(X) count is incorrect
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+## straight.txt: wall(X) count is incorrect
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 14
+## demoMaze.txt: wall(X) count is incorrect
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+## demoMaze.txt: wall(X) count is incorrect
+## turn.txt: dot(.) count is incorrect. Correct path size is 55
+## turn.txt: wall(X) count is incorrect
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+## turn.txt: wall(X) count is incorrect
+## classic.txt: dot(.) count is incorrect. Correct path size is 14
+## classic.txt: wall(X) count is incorrect
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+## classic.txt: wall(X) count is incorrect
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+## mediumMaze.txt: wall(X) count is incorrect
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+## mediumMaze.txt: wall(X) count is incorrect
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: wall(X) count is incorrect
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: wall(X) count is incorrect
+## unsolvable.txt: wall(X) count is incorrect
+## unsolvable.txt: wall(X) count is incorrect
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+## randomMaze.txt: wall(X) count is incorrect
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+## randomMaze.txt: wall(X) count is incorrect
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+## tinyOpen.txt: wall(X) count is incorrect
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+## tinyOpen.txt: wall(X) count is incorrect
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     15/32.5
+SolveDFS()                     15/32.5
+
+SCORE    65 / 100
+

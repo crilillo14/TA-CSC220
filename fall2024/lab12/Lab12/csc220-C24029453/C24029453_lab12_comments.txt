@@ -1,0 +1,53 @@
+C24029453            Degori Joey
+
+
+Comments:
+
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 8
+## tinyMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## tinyMaze.txt: dot(.) count is incorrect. Correct path size is 10
+## tinyMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+## straight.txt: should have one 'G'; you have no 'G' or you have more than one
+## straight.txt: dot(.) count is incorrect. Correct path size is 6
+## straight.txt: should have one 'G'; you have no 'G' or you have more than one
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 14
+## demoMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## demoMaze.txt: dot(.) count is incorrect. Correct path size is 54
+## demoMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## turn.txt: dot(.) count is incorrect. Correct path size is 55
+## turn.txt: should have one 'G'; you have no 'G' or you have more than one
+## turn.txt: dot(.) count is incorrect. Correct path size is 405
+## turn.txt: should have one 'G'; you have no 'G' or you have more than one
+## classic.txt: dot(.) count is incorrect. Correct path size is 14
+## classic.txt: should have one 'G'; you have no 'G' or you have more than one
+## classic.txt: dot(.) count is incorrect. Correct path size is 30
+## classic.txt: should have one 'G'; you have no 'G' or you have more than one
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 67
+## mediumMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## mediumMaze.txt: dot(.) count is incorrect. Correct path size is 129
+## mediumMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## bigMaze.txt: dot(.) count is incorrect. Correct path size is 209
+## bigMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 188
+## randomMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## randomMaze.txt: dot(.) count is incorrect. Correct path size is 536
+## randomMaze.txt: should have one 'G'; you have no 'G' or you have more than one
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+## tinyOpen.txt: should have one 'G'; you have no 'G' or you have more than one
+## tinyOpen.txt: dot(.) count is incorrect. Correct path size is 3
+## tinyOpen.txt: should have one 'G'; you have no 'G' or you have more than one
+
+Grading Rubric: 
+
+Submitted                      15/15
+Correct Submission              5/ 5
+Compiles                       10/10
+Runs                            5/ 5
+solveBFS()                     15/32.5
+SolveDFS()                     15/32.5
+
+SCORE    65 / 100
+

@@ -43,7 +43,7 @@ public class CheckLab {
 					String mazeSolDFS = mazes[i]+"DFSSol.txt";
 
 					gradePoint[0] += two_file_compare(path+mazeSolBFS, path+genMazeBFS, originalmaze, output);
-					gradePoint[0] += two_file_compare(path+mazeSolDFS, path+genMazeDFS, originalmaze, output);
+					gradePoint[1] += two_file_compare(path+mazeSolDFS, path+genMazeDFS, originalmaze, output);
 
 
 					//gradePoint[0] += two_file_compare(path+mazesSol[i]+".txt", path+genMaze, originalmaze, output);
@@ -53,6 +53,7 @@ public class CheckLab {
 				}
 			}
 			gradePoint[0] = gradePoint[0]/mazes.length;
+			gradePoint[1] = gradePoint[1]/mazes.length;
 			
 		}catch(Exception ex){
 			int endLen = ex.toString().length()<50?ex.toString().length():50;
@@ -100,12 +101,14 @@ public class CheckLab {
 			points += 50;
 		}else{
 			message.append("## "+orifile+": dot(.) count is incorrect. Correct path size is "+sol_count[0]+"\n");
+			message.append("## " + orifile + ": your path size is " + test_count[0] + "\n");
 		}
 		
 		if(sol_count[1] == test_count[1]){
 			points += 10;
 		}else{
 			message.append("## "+orifile+": wall(X) count is incorrect\n");
+			message.append()
 		}
 		
 		if(sol_count[2] == test_count[2]){
