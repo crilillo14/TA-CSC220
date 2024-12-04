@@ -8,7 +8,7 @@ students = [line.strip().split(',') for line in open('/Users/CristobalLillo_1/TA
 
 # for individual testing
 
-# students = [student for student in students if student[0] in ["C23985390"]]
+students = [student for student in students if student[0] in ["C23969743"]]
 
 
 
@@ -447,11 +447,17 @@ def submit_grade_in_box(dist_disk,box_add):
 		#shutil.copyfile(disk_main_add + "txt2pdf.py", disk_stu_lab_comment + "/" + "txt2pdf.py")
 		python_run = "python3 " + disk_main_add + "txt2pdf.py" + " -qo " + disk_stu_lab_comment + "/" + review_file+".pdf" + " " \
 		+ disk_stu_lab_comment + "/" + review_file+".txt"
-		run = os.popen(python_run);
-		#make the pdf
-		#write_simple_pdf(disk_stu_lab_comment,review_file)
-		# uploads the pdf file to the student's box account 
-		shutil.copyfile(disk_stu_lab_comment+"/"+review_file+".pdf",box_stu_lab_comment+"/"+review_file+".pdf");
+		subprocess.run(python_run, shell=True, check=True)  # Runs and waits for completion
+
+		# Make the PDF
+		# write_simple_pdf(disk_stu_lab_comment, review_file)
+
+		# Upload the PDF file to the student's box account
+		shutil.copyfile(
+			f"{disk_stu_lab_comment}/{review_file}.pdf",
+			f"{box_stu_lab_comment}/{review_file}.pdf"
+		)
+  
 		print ("uploaded for "+student[1]+ " " + student[2])
 
 def does_pdf_exist(dist_disk,box_add):
@@ -470,7 +476,7 @@ def does_pdf_exist(dist_disk,box_add):
 # check_shared_folder(distadd,assignment,assignmentfiles)
 
 # second 
-copy_assignment_with_name(distadd, disk_main_add+assignment);
+# copy_assignment_with_name(distadd, disk_main_add+assignment);
 # secnd for late - must check for lateness
 # copy_assignment_with_name_late(distadd, disk_main_add+assignment);
 
@@ -492,5 +498,5 @@ copy_assignment_with_name(distadd, disk_main_add+assignment);
 
 # fifth
 #put grade
-# submit_grade_in_box(disk_main_add+assignment,distadd);
+submit_grade_in_box(disk_main_add+assignment,distadd);
 # does_pdf_exist(disk_main_add+assignment,distadd)

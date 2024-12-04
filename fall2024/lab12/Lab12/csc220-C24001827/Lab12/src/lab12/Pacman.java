@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Stack;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Pacman {
 
@@ -48,9 +48,8 @@ public class Pacman {
         public boolean isVisited() { return visited; }
     }
 
-    /** constructor 
-     * @param outputFileNameDFS */
-    public Pacman(String inputFileName, String outputFileName, String outputFileNameDFS) {
+
+    public Pacman(String inputFileName, String outputFileName) {
         this.inputFileName = inputFileName;
         this.outputFileName = outputFileName;
         buildGraph();
